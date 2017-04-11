@@ -35,7 +35,7 @@ master_doc = 'README'
 # General information about the project.
 project = u'Adafruit {{ cookiecutter.library_name | upper() }} Library'
 copyright = u'2017 {{ cookiecutter.author }}'
-author = u'Scott Shawcroft'
+author = u'{{ cookiecutter.author }}'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -125,7 +125,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'Adafruit{{ cookiecutter.library_name | upper() }}Library.tex', u'Adafruit {{ cookiecutter.library_name | upper() }} Library Documentation',
-     u'Phiilip Moyer', 'manual'),
+     author, 'manual'),
 ]
 
 # -- Options for manual page output ---------------------------------------
