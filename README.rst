@@ -7,7 +7,7 @@ library.
 
 To use:
 
-.. code-block::bash
+.. code-block:: bash
 
   # The first time
   pip install cookiecutter
