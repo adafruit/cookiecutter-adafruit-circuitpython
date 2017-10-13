@@ -2,6 +2,10 @@
 Introduction
 ============
 
+.. image :: https://img.shields.io/discord/327254708534116352.svg
+    :target: https://discord.gg/nBQh6qu
+    :alt: Discord
+
 This cookiecutter creates a project structure for a Adafruit CircuitPython
 library.
 
