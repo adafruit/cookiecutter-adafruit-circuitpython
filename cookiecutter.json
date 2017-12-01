@@ -3,5 +3,7 @@
     "depends_on_bus_device": "",
     "depends_on_register": "",
     "author": null,
-    "company": "Adafruit Industries"
+    "github_user": "adafruit",
+    "library_prefix": "",
+    "company": ""
 }

@@ -15,6 +15,11 @@ extensions = [
     'sphinx.ext.viewcode',
 ]
 
+# Uncomment the below if you use native CircuitPython modules such as
+# digitalio, micropython and busio. List the modules you use. Without it, the
+# autodoc module docs will fail to generate with a warning.
+# autodoc_mock_imports = ["digitalio", "busio"]
+
 intersphinx_mapping = {'python': ('https://docs.python.org/3.4', None),
                         {%- if cookiecutter.depends_on_bus_device -%}
                         'BusDevice': ('https://circuitpython.readthedocs.io/projects/bus_device/en/latest/', None),
@@ -33,7 +38,7 @@ source_suffix = '.rst'
 master_doc = 'README'
 
 # General information about the project.
-project = u'Adafruit {{ cookiecutter.library_name | upper() }} Library'
+project = u'{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize }} {% endif %}{{ cookiecutter.library_name }} Library'
 copyright = u'2017 {{ cookiecutter.author }}'
 author = u'{{ cookiecutter.author }}'
 
@@ -98,7 +103,7 @@ else:
 html_static_path = ['_static']
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'Adafruit{{ cookiecutter.library_name | upper() }}Librarydoc'
+htmlhelp_basename = '{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize }}{% endif %}{{ cookiecutter.library_name | capitalize }}Librarydoc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -124,7 +129,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'Adafruit{{ cookiecutter.library_name | upper() }}Library.tex', u'Adafruit {{ cookiecutter.library_name | upper() }} Library Documentation',
+    (master_doc, '{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize }}{% endif %}{{ cookiecutter.library_name }}Library.tex', u'{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize }}{% endif %}{{ cookiecutter.library_name }} Library Documentation',
      author, 'manual'),
 ]
 
@@ -133,7 +138,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'adafruit{{ cookiecutter.library_name | upper() }}library', u'Adafruit {{ cookiecutter.library_name | upper() }} Library Documentation',
+    (master_doc, '{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize }}{% endif %}{{ cookiecutter.library_name }}library', u'{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize }} {% endif %}{{ cookiecutter.library_name }} Library Documentation',
      [author], 1)
 ]
 
@@ -143,7 +148,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'Adafruit{{ cookiecutter.library_name | upper() }}Library', u'Adafruit {{ cookiecutter.library_name | upper() }} Library Documentation',
-     author, 'Adafruit{{ cookiecutter.library_name | upper() }}Library', 'One line description of project.',
+    (master_doc, '{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize }}{% endif %}{{ cookiecutter.library_name }}Library', u'{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize }}{% endif %} {{ cookiecutter.library_name }} Library Documentation',
+     author, '{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize }}{% endif %}{{ cookiecutter.library_name }}Library', 'One line description of project.',
      'Miscellaneous'),
 ]
