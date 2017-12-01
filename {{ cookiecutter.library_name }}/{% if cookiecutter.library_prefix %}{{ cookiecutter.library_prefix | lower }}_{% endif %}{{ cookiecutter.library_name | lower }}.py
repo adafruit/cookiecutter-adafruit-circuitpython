@@ -1,6 +1,6 @@
 # The MIT License (MIT)
 #
-# Copyright (c) 2017 {{ cookiecutter.author }} for {{ cookiecutter.company }}
+# Copyright (c) 2017 {{ cookiecutter.author }}{% if cookiecutter.company %} for {{ cookiecutter.company }}{% endif %}
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -20,7 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 """
-`adafruit_{{ cookiecutter.library_name }}`
+`{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix }}_{% endif %}{{ cookiecutter.library_name }}`
 ====================================================
 
 TODO(description)
