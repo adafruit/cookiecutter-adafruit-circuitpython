@@ -1,4 +1,3 @@
-circuitpython-travis-build-tools
 {% if cookiecutter.depends_on_bus_device != "" -%}
 adafruit-circuitpython-bus-device
 {%- endif %}

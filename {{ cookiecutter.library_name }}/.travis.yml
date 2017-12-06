@@ -21,4 +21,10 @@ deploy:
   on:
     tags: true
 
-script: circuitpython-build-bundles --filename_prefix {% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | lower }}-{% endif %}circuitpython-{{ cookiecutter.library_name | lower }} --library_location .
+install:
+  - pip install pylint circuitpython-travis-build-tools
+
+script:
+  - pylint {% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | lower }}_{% endif %}{{ cookiecutter.library_name | lower }}.py
+  - ([[ ! -d "examples" ]] || pylint --disable=missing-docstring,invalid-name examples/*.py)
+  - circuitpython-build-bundles --filename_prefix {% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | lower }}-{% endif %}circuitpython-{{ cookiecutter.library_name | lower }} --library_location .
