@@ -28,5 +28,7 @@ TODO(description)
 * Author(s): {{ cookiecutter.author }}
 """
 
+# imports
+
 __version__ = "0.0.0-auto.0"
 __repo__ = "https://github.com/{{ cookiecutter.github_user }}/{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize}}_{% endif %}CircuitPython_{{ cookiecutter.library_name }}.git"
