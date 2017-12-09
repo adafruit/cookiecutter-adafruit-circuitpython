@@ -22,7 +22,7 @@ deploy:
     tags: true
 
 install:
-  - pip install pylint circuitpython-travis-build-tools
+  - pip install pylint circuitpython-build-tools
 
 script:
   - pylint {% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | lower }}_{% endif %}{{ cookiecutter.library_name | lower }}.py
