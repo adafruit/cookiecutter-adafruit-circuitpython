@@ -56,22 +56,22 @@ Building locally
 ================
 
 To build this library locally you'll need to install the
-`circuitpython-travis-build-tools <https://github.com/adafruit/circuitpython-build-tools>`_ package.
+`circuitpython-build-tools <https://github.com/adafruit/circuitpython-build-tools>`_ package.
 
-.. code-block::shell
+.. code-block:: shell
 
     python3 -m venv .env
     source .env/bin/activate
-    pip install -r requirements.txt
+    pip install circuitpython-build-tools
 
 Once installed, make sure you are in the virtual environment:
 
-.. code-block::shell
+.. code-block:: shell
 
     source .env/bin/activate
 
 Then run the build:
 
-.. code-block::shell
+.. code-block:: shell
 
     circuitpython-build-bundles --filename_prefix {% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | lower }}-{% endif %}circuitpython-{{ cookiecutter.library_name | lower }} --library_location .
