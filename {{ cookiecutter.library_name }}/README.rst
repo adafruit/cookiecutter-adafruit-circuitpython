@@ -2,7 +2,7 @@
 Introduction
 ============
 
-.. image:: https://readthedocs.org/projects/{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix }}-{% endif %}circuitpython-{{ cookiecutter.library_name }}/badge/?version=latest
+.. image:: https://readthedocs.org/projects/{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | lower }}-{% endif %}circuitpython-{{ cookiecutter.library_name | lower }}/badge/?version=latest
 {% if cookiecutter.library_prefix %}
     :target: https://circuitpython.readthedocs.io/projects/{{ cookiecutter.library_name | lower }}/en/latest/
 {% else %}
