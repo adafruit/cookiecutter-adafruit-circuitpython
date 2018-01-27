@@ -1,18 +1,28 @@
-
+{% if cookiecutter.library_prefix -%}
+    {% set prefix = cookiecutter.library_prefix + "_" -%}
+{% else -%}
+    {% set prefix = '' -%}
+{% endif -%}
+{% set repo_name = prefix + "CircuitPython_" + cookiecutter.library_name -%}
+{% set full_repo_name = cookiecutter.github_user + "/" + repo_name -%}
 Introduction
 ============
 
-.. image:: https://readthedocs.org/projects/{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | lower }}-{% endif %}circuitpython-{{ cookiecutter.library_name | lower }}/badge/?version=latest
-{% if cookiecutter.library_prefix %}
+.. image:: https://readthedocs.org/projects/{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | lower | replace("_", "-")}}-{% endif %}circuitpython-{{ cookiecutter.library_name | lower }}/badge/?version=latest
+{%- if cookiecutter.library_prefix %}
     :target: https://circuitpython.readthedocs.io/projects/{{ cookiecutter.library_name | lower }}/en/latest/
-{% else %}
+{%- else %}
     :target: https://circuitpython-{{ cookiecutter.library_name | lower }}.readthedocs.io/
-{% endif %}
+{%- endif %}
     :alt: Documentation Status
 
-.. image :: https://img.shields.io/discord/327254708534116352.svg
+.. image:: https://img.shields.io/discord/327254708534116352.svg
     :target: https://discord.gg/nBQh6qu
     :alt: Discord
+
+.. image:: https://travis-ci.org/{{ full_repo_name }}.svg?branch=master
+    :target: https://travis-ci.org/{{ full_repo_name }}
+    :alt: Build Status
 
 TODO
 
@@ -49,7 +59,7 @@ Contributing
 ============
 
 Contributions are welcome! Please read our `Code of Conduct
-<https://github.com/{{ cookiecutter.github_user }}/{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize }}_{% endif %}CircuitPython_{{ cookiecutter.library_name }}/blob/master/CODE_OF_CONDUCT.md>`_
+<https://github.com/{{ full_repo_name }}/blob/master/CODE_OF_CONDUCT.md>`_
 before contributing to help this project stay welcoming.
 
 Building locally
