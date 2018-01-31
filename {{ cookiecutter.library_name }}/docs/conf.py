@@ -2,7 +2,7 @@
 
 import os
 import sys
-sys.path.insert(0, os.path.abspath('.'))
+sys.path.insert(0, os.path.abspath('..'))
 
 # -- General configuration ------------------------------------------------
 
@@ -12,7 +12,7 @@ sys.path.insert(0, os.path.abspath('.'))
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.intersphinx',
-    'sphinx.ext.viewcode',
+    'sphinx.ext.todo',
 ]
 
 # Uncomment the below if you use native CircuitPython modules such as
@@ -61,7 +61,7 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', '.env', 'CODE_OF_CONDUCT.md']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -77,6 +77,9 @@ pygments_style = 'sphinx'
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = False
+
+# If this is True, todo emits a warning for each TODO entries. The default is False.
+todo_emit_warnings = True
 
 
 # -- Options for HTML output ----------------------------------------------
