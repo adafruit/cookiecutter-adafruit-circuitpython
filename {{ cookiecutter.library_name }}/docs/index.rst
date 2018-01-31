@@ -1,3 +1,11 @@
+{% if cookiecutter.library_prefix -%}
+    {% set prefix = cookiecutter.library_prefix + "_" -%}
+{% else -%}
+    {% set prefix = '' -%}
+{% endif -%}
+{% set repo_name = prefix + "CircuitPython_" + cookiecutter.library_name -%}
+{% set full_repo_name = cookiecutter.github_user + "/" + repo_name -%}
+
 .. include:: ../README.rst
 
 Table of Contents

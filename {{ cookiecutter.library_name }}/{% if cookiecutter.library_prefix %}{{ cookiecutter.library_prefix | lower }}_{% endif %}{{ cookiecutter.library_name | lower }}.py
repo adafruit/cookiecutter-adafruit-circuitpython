@@ -23,7 +23,7 @@
 `{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix }}_{% endif %}{{ cookiecutter.library_name }}`
 ====================================================
 
-TODO(description)
+.. todo:: Describe what the module does
 
 * Author(s): {{ cookiecutter.author }}
 """
