@@ -16,10 +16,12 @@ extensions = [
     'sphinx.ext.todo',
 ]
 
+# TODO: Please Read!
 # Uncomment the below if you use native CircuitPython modules such as
 # digitalio, micropython and busio. List the modules you use. Without it, the
 # autodoc module docs will fail to generate with a warning.
 # autodoc_mock_imports = ["digitalio", "busio"]
+
 
 intersphinx_mapping = {'python': ('https://docs.python.org/3.4', None),
                         {%- if cookiecutter.depends_on_bus_device -%}
@@ -106,6 +108,12 @@ else:
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+# The name of an image file (relative to this directory) to use as a favicon of
+# the docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
+# pixels large.
+#
+html_favicon = '_static/favicon.ico'
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = '{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize }}{% endif %}{{ cookiecutter.library_name | capitalize }}Librarydoc'
