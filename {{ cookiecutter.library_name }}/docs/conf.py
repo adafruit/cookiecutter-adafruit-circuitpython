@@ -25,7 +25,7 @@ extensions = [
 
 intersphinx_mapping = {'python': ('https://docs.python.org/3.4', None),
                         {%- if cookiecutter.depends_on_bus_device -%}
-                        'BusDevice': ('https://circuitpython.readthedocs.io/projects/bus_device/en/latest/', None),
+                        'BusDevice': ('https://circuitpython.readthedocs.io/projects/busdevice/en/latest/', None),
                         {%- endif -%}
                         {%- if cookiecutter.depends_on_register -%}
                         'Register': ('https://circuitpython.readthedocs.io/projects/register/en/latest/', None),
