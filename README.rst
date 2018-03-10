@@ -1,4 +1,3 @@
-
 Introduction
 ============
 
@@ -9,7 +8,14 @@ Introduction
 This cookiecutter creates a project structure for a Adafruit CircuitPython
 library.
 
-To use:
+See this Adafruit Learn Guide for an explanation of creating a CircuitPython library: `Creating and sharing a CircuitPython library <https://learn.adafruit.com/creating-and-sharing-a-circuitpython-library/overview>`_ The section for using cookiecutter is `here <https://learn.adafruit.com/creating-and-sharing-a-circuitpython-library/creating-a-library#cookie-cutter>`_.
+
+.. note::
+
+    The above Learn Guide is directed towards creating a library for the Community Bundle. For libraries meant for the Adafruit Bundle, contact the CircuitPython Helpers (@circuitpython helpers) on Discord.
+
+Cookiecutter Usage
+===================
 
 .. code-block:: bash
 
@@ -34,3 +40,32 @@ Prompts
 * `github_user` - GitHub user or organization which will host this repo. For example, Adafruit funded libraries should say "adafruit" here.
 * `library_prefix` - Used to prefix the code to the organization creating the library. For example, Adafruit supported libraries should say "adafruit" here. Do not add a - or _.
 * `company` - Used to give Copyright credit to the company funding the library. For example, Adafruit funded libraries should say "Adafruit Industries" here.
+
+Windows Users
+==============
+
+Due to the development nature of cookiecutter, there are some limitations when using with Windows.
+
+Cookiecutter Installation
+--------------------------
+
+The Python enviornment can be tricky sometimes in Windows. Use this documentation page for steps and tips on Windows installation: `Cookiecutter Installation - Windows <https://cookiecutter.readthedocs.io/en/latest/installation.html#windows>`_
+
+
+<library>.py File Generation
+-----------------------------
+
+Cookiecutter was developed for use in *nix\OSX enviornments. When implementing prompt based configuration for things like filenames, special characters were used for programatic detection and formatting. 
+
+.. code-block::
+   :caption: <library>.py filename in cookiecutter template
+   :dedent: 4
+
+    {% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | lower }}_{% endif %}{{ cookiecutter.library_name | lower }}.py 
+
+As such, Windows will block the use of these special characters in filenames. So when cookiecutter pulls the Adafruit CircuitPython template, the <library>.py file is not created. This adds an extra step. Simply copy and existing librariy's .py file (and structure if  making a "package"), and change the propmted values (e.g. author name, library name, documentation information, etc).
+
+.. note::
+    The above is from experience with using cookiecutter within a Windows native setup. This may not be applicable when using Windows Subsystem for Linux (WSL) or any Unix utilities.
+
+    We are always exploring ways to make things easier, so this workflow may change. Also, ideas and solutions are always welcome!
