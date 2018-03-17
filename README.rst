@@ -69,11 +69,9 @@ The Python enviornment can be tricky sometimes in Windows. Use this documentatio
 <library>.py & /examples/<library>_simpletest.py File Generation
 ------------------------------------------------------------------
 
-Cookiecutter was developed for use in *nix\OSX enviornments. When implementing prompt based configuration for things like filenames, special characters were used for programatic detection and formatting. 
+Cookiecutter was developed for use in \*\nix/OSX enviornments. When implementing prompt based configuration for things like filenames, special characters were used for programatic detection and formatting. 
 
 .. code-block::
-   :caption: <library>.py filename in cookiecutter template
-   :dedent: 4
 
     {% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | lower }}_{% endif %}{{ cookiecutter.library_name | lower }}.py 
 
