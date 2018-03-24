@@ -69,13 +69,13 @@ The Python enviornment can be tricky sometimes in Windows. Use this documentatio
 <library>.py & /examples/<library>_simpletest.py File Generation
 ------------------------------------------------------------------
 
-Cookiecutter was developed for use in \*\nix/OSX enviornments. When implementing prompt based configuration for things like filenames, special characters were used for programatic detection and formatting. 
+Cookiecutter was developed for use in \*\nix/OSX enviornments. When implementing prompt based configuration for things like filenames, special characters were used for programmatic detection and formatting. 
 
 .. code-block::
 
     {% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | lower }}_{% endif %}{{ cookiecutter.library_name | lower }}.py 
 
-As such, Windows will block the use of these special characters in filenames. So when cookiecutter pulls the Adafruit CircuitPython template, the <library>.py and /examples/<library>_simpletest.py files are not created. This adds an extra step. Simply copy and existing librariy's .py files (and structure if  making a "package"), and change the propmted values (e.g. author name, library name, documentation information, etc).
+As such, Windows will block the use of these special characters in filenames. So when cookiecutter pulls the Adafruit CircuitPython template, the <library>.py and /examples/<library>_simpletest.py files are not created. This adds an extra step. Simply copy an existing library's .py files (and structure if  making a "package"), and change the prompted values (e.g. author name, library name, documentation information, etc).
 
 .. note::
     The above is from experience with using cookiecutter within a Windows native setup. This may not be applicable when using Windows Subsystem for Linux (WSL) or any *nix-For-Windows utilities.
