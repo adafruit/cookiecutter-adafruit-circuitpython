@@ -1,5 +1,5 @@
 {% if cookiecutter.depends_on_bus_device != "" -%}
-adafruit-circuitpython-bus-device
+adafruit-circuitpython-busdevice
 {%- endif %}
 {%- if cookiecutter.depends_on_register != "" %}
 adafruit-circuitpython-register
