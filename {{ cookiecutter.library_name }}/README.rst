@@ -1,5 +1,5 @@
 {% if cookiecutter.library_prefix -%}
-    {% set prefix = cookiecutter.library_prefix + "_" -%}
+    {% set prefix = cookiecutter.library_prefix | capitalize + "_" -%}
 {% else -%}
     {% set prefix = '' -%}
 {% endif -%}
