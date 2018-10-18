@@ -30,8 +30,10 @@ Prompts
 --------
 
 * ``library_name`` - Shortest name for the library. Usually a chip name such as LIS3DH.
-* ``depends_on_bus_device`` - Determines whether to add comments about a dependency on [BusDevice](https://github.com/adafruit/Adafruit_CircuitPython_BusDevice). Leave empty if the library won't use BusDevice.
-* ``depends_on_register`` - Determines whether to add comments about a dependency on [Register](https://github.com/adafruit/Adafruit_CircuitPython_Register). Leave empty if the library won't use Register.
+* ``depends_on_bus_device`` - Determines whether to add comments about a dependency on [BusDevice](https://github.com/adafruit/Adafruit_CircuitPython_BusDevice).
+If the library uses BusDevice, enter ``y`` or ``yes`` to include. If the library doesn't use BusDevice, all other entries including empty, will not include BusDevice.
+* ``depends_on_register`` - Determines whether to add comments about a dependency on [Register](https://github.com/adafruit/Adafruit_CircuitPython_Register).
+If the library uses Register, enter ``y`` or ``yes`` to include. If the library doesn't use Register, all other entries including empty, will not include Register.
 * ``author`` - Who you are! Sets the copyright to you.
 * ``github_user`` - GitHub user or organization which will host this repo. For example, Adafruit funded libraries should say "adafruit" here.
 * ``library_prefix`` - Used to prefix the code to the organization creating the library. For example, Adafruit supported libraries should say "adafruit" here. Do not add a - or _.
@@ -69,11 +71,11 @@ The Python enviornment can be tricky sometimes in Windows. Use this documentatio
 <library>.py & /examples/<library>_simpletest.py File Generation
 ------------------------------------------------------------------
 
-Cookiecutter was developed for use in \*\nix/OSX enviornments. When implementing prompt based configuration for things like filenames, special characters were used for programmatic detection and formatting. 
+Cookiecutter was developed for use in \*\nix/OSX enviornments. When implementing prompt based configuration for things like filenames, special characters were used for programmatic detection and formatting.
 
 .. code-block::
 
-    {% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | lower }}_{% endif %}{{ cookiecutter.library_name | lower }}.py 
+    {% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | lower }}_{% endif %}{{ cookiecutter.library_name | lower }}.py
 
 As such, Windows will block the use of these special characters in filenames. So when cookiecutter pulls the Adafruit CircuitPython template, the <library>.py and /examples/<library>_simpletest.py files are not created. This adds an extra step. Simply copy an existing library's .py files (and structure if  making a "package"), and change the prompted values (e.g. author name, library name, documentation information, etc).
 
