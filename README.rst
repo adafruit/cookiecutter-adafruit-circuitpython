@@ -30,9 +30,9 @@ Prompts
 --------
 
 * ``library_name`` - Shortest name for the library. Usually a chip name such as LIS3DH.
-* ``depends_on_bus_device`` - Determines whether to add comments about a dependency on [BusDevice](https://github.com/adafruit/Adafruit_CircuitPython_BusDevice).
+* ``depends_on_bus_device`` - Determines whether to add comments about a dependency on `BusDevice <https://github.com/adafruit/Adafruit_CircuitPython_BusDevice>`_.
   If the library uses BusDevice, enter ``y`` or ``yes`` to include. If the library doesn't use BusDevice, all other entries including empty, will not include BusDevice.
-* ``depends_on_register`` - Determines whether to add comments about a dependency on [Register](https://github.com/adafruit/Adafruit_CircuitPython_Register).
+* ``depends_on_register`` - Determines whether to add comments about a dependency on `Register <https://github.com/adafruit/Adafruit_CircuitPython_Register>`_.
   If the library uses Register, enter ``y`` or ``yes`` to include. If the library doesn't use Register, all other entries including empty, will not include Register.
 * ``author`` - Who you are! Sets the copyright to you.
 * ``github_user`` - GitHub user or organization which will host this repo. For example, Adafruit funded libraries should say "adafruit" here.
