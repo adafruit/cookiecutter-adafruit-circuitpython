@@ -23,7 +23,9 @@ deploy:
     tags: true
 
 install:
-  - pip install pylint circuitpython-build-tools Sphinx sphinx-rtd-theme
+  - pip install -r requirements.txt
+  - pip install circuitpython-build-tools Sphinx sphinx-rtd-theme
+  - pip install --force-reinstall pylint==1.9.2
 
 script:
   - pylint {% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | lower }}_{% endif %}{{ cookiecutter.library_name | lower }}.py
