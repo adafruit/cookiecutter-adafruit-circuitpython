@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-{% if cookiecutter.depends_on_bus_device in ["y", "yes"] -%}
-=======
 Adafruit-Blinka
-{% if cookiecutter.depends_on_bus_device != "" -%}
->>>>>>> 1396aa5e662000d07f390d746a9e28905099bfa1
+{% if cookiecutter.depends_on_bus_device in ["y", "yes"] -%}
 adafruit-circuitpython-busdevice
 {%- endif %}
 {%- if cookiecutter.depends_on_register in ["y", "yes"] %}
