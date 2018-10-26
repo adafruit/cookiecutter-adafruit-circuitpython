@@ -31,10 +31,10 @@ Dependencies
 This driver depends on:
 
 * `Adafruit CircuitPython <https://github.com/adafruit/circuitpython>`_
-{%- if cookiecutter.depends_on_bus_device != "" %}
+{%- if cookiecutter.depends_on_bus_device in ["y", "yes"] %}
 * `Bus Device <https://github.com/adafruit/Adafruit_CircuitPython_BusDevice>`_
 {%- endif %}
-{%- if cookiecutter.depends_on_register != "" %}
+{%- if cookiecutter.depends_on_register in ["y", "yes"] %}
 * `Register <https://github.com/adafruit/Adafruit_CircuitPython_Register>`_
 {%- endif %}
 
