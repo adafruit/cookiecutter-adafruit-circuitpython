@@ -27,7 +27,7 @@ intersphinx_mapping = {'python': ('https://docs.python.org/3.4', None),
                         {%- if cookiecutter.depends_on_bus_device in ["y", "yes"] -%}
                         'BusDevice': ('https://circuitpython.readthedocs.io/projects/busdevice/en/latest/', None),
                         {%- endif -%}
-                        {%- if cookiecutter.depends_on_register ["y", "yes"] -%}
+                        {%- if cookiecutter.depends_on_register in ["y", "yes"] -%}
                         'Register': ('https://circuitpython.readthedocs.io/projects/register/en/latest/', None),
                         {%- endif -%}
                         'CircuitPython': ('https://circuitpython.readthedocs.io/en/latest/', None)}
