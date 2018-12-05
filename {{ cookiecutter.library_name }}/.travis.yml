@@ -3,7 +3,7 @@
 # See https://github.com/adafruit/circuitpython-build-tools for detailed setup
 # instructions.
 
-dist: trusty
+dist: xenial
 language: python
 python:
     - "3.6"
