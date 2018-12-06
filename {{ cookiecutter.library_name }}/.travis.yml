@@ -30,4 +30,4 @@ script:
   - pylint {% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | lower }}_{% endif %}{{ cookiecutter.library_name | lower }}.py
   - ([[ ! -d "examples" ]] || pylint --disable=missing-docstring,invalid-name,bad-whitespace examples/*.py)
   - circuitpython-build-bundles --filename_prefix {% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | lower }}-{% endif %}circuitpython-{{ cookiecutter.library_name | lower }} --library_location .
-  - cd docs && sphinx-build -E -W -b html . _build/html
+  - cd docs && sphinx-build -E -W -b html . _build/html && cd ..
