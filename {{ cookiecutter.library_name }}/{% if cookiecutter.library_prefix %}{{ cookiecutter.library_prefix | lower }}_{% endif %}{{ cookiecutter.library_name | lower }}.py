@@ -23,7 +23,11 @@
 `{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | lower }}_{% endif %}{{ cookiecutter.library_name | lower }}`
 ================================================================================
 
-.. todo:: Describe what the module does
+{%- if cookiecutter.library_description != "" %}
+    {% cookiecutter.library_description %}
+{%- else %}
+.. todo:: Describe what the library does.
+{%- endif %}
 
 * Author(s): {{ cookiecutter.author }}
 

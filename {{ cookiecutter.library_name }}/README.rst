@@ -24,7 +24,11 @@ Introduction
     :target: https://travis-ci.com/{{ full_repo_name }}
     :alt: Build Status
 
+{%- if cookiecutter.library_description != "" %}
+    {% cookiecutter.library_description %}
+{%- else %}
 .. todo:: Describe what the library does.
+{%- endif %}
 
 Dependencies
 =============
