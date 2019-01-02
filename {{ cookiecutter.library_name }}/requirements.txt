@@ -1,7 +1,10 @@
 Adafruit-Blinka
-{% if cookiecutter.depends_on_bus_device in ["y", "yes"] -%}
+{% if cookiecutter.requires_bus_device in ["y", "yes"] -%}
 adafruit-circuitpython-busdevice
 {%- endif %}
-{%- if cookiecutter.depends_on_register in ["y", "yes"] %}
+{%- if cookiecutter.requires_register in ["y", "yes"] %}
 adafruit-circuitpython-register
+{%- endif %}
+{%- if cookiecutter.other_requirements != "" %}
+    {% cookiecutter.other_requirements %}
 {%- endif %}
