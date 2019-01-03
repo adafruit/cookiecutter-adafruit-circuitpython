@@ -1,3 +1,4 @@
+{# create list of requirements #}
 {%- set list = namespace(items=["Adafruit-Blinka"]) -%}
 {%- if cookiecutter.requires_bus_device in ["y", "yes"] -%}
     {%- do list.items.append("adafruit-circuitpython-busdevice") -%}
@@ -9,6 +10,10 @@
     {%- set tests = cookiecutter.other_requirements -%}
     {%- do list.items.extend(tests.replace(" ", "").split(",")) -%}
 {%- endif -%}
+{# put keywords into an iterable list, based on word wrapping #}
+{%- set kw_list = namespace(kw_list=[]) -%}
+{%- set wrapped = cookiecutter.library_keywords|wordwrap(break_long_words=False) -%}
+{%- do kw_list.kw_list.extend(wrapped.split("\n")) -%}
 """A setuptools based setup module.
 
 See:
@@ -64,7 +69,7 @@ setup(
     ],
 
     # What does your project relate to?
-    keywords='{{ cookiecutter.library_keywords }}',
+    keywords='{{ kw_list.kw_list|join("'\n'")|indent(width=13) }}',
 
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
