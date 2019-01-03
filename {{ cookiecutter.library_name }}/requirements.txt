@@ -1,10 +1,12 @@
-Adafruit-Blinka
-{% if cookiecutter.requires_bus_device in ["y", "yes"] -%}
-adafruit-circuitpython-busdevice
+{% set list = namespace(items=["Adafruit-Blinka"]) %}
+{%- if cookiecutter.depends_on_bus_device in ["y", "yes"] -%}
+    {%- do list.items.append("adafruit-circuitpython-busdevice") -%}
 {%- endif %}
-{%- if cookiecutter.requires_register in ["y", "yes"] %}
-adafruit-circuitpython-register
+{%- if cookiecutter.depends_on_register in ["y", "yes"] %}
+    {%- do list.items.append("adafruit-circuitpython-register") -%}
 {%- endif %}
-{%- if cookiecutter.other_requirements != "" %}
-    {% cookiecutter.other_requirements %}
-{%- endif %}
+{%- if cookiecutter.test != "" %}
+    {%- set tests = cookiecutter.test -%}
+    {%- do list.items.extend(tests.replace(" ", "").split(",")) -%}
+{%- endif -%}
+{{ list.items|unique|join("\n") }}
