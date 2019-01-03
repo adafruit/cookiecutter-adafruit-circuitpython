@@ -1,12 +1,12 @@
-{% set list = namespace(items=["Adafruit-Blinka"]) %}
-{%- if cookiecutter.depends_on_bus_device in ["y", "yes"] -%}
-    {%- do list.items.append("adafruit-circuitpython-busdevice") -%}
+{% set req_list = namespace(items=["Adafruit-Blinka"]) %}
+{%- if cookiecutter.requires_bus_device in ["y", "yes"] -%}
+    {%- do req_list.items.append("adafruit-circuitpython-busdevice") -%}
 {%- endif %}
-{%- if cookiecutter.depends_on_register in ["y", "yes"] %}
-    {%- do list.items.append("adafruit-circuitpython-register") -%}
+{%- if cookiecutter.requires_register in ["y", "yes"] %}
+    {%- do req_list.items.append("adafruit-circuitpython-register") -%}
 {%- endif %}
-{%- if cookiecutter.test != "" %}
-    {%- set tests = cookiecutter.test -%}
-    {%- do list.items.extend(tests.replace(" ", "").split(",")) -%}
+{%- if cookiecutter.other_requirements != "" %}
+    {%- set tests = cookiecutter.other_requirements -%}
+    {%- do req_list.items.extend(tests.replace(" ", "").split(",")) -%}
 {%- endif -%}
-{{ list.items|unique|join("\n") }}
+{{ req_list.items|unique|join("\n") }}

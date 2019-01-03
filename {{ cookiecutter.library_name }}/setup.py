@@ -1,14 +1,14 @@
 {# create list of requirements #}
-{%- set list = namespace(items=["Adafruit-Blinka"]) -%}
+{%- set req_list = namespace(items=["Adafruit-Blinka"]) -%}
 {%- if cookiecutter.requires_bus_device in ["y", "yes"] -%}
-    {%- do list.items.append("adafruit-circuitpython-busdevice") -%}
+    {%- do req_list.items.append("adafruit-circuitpython-busdevice") -%}
 {%- endif %}
 {%- if cookiecutter.requires_register in ["y", "yes"] %}
-    {%- do list.items.append("adafruit-circuitpython-register") -%}
+    {%- do req_list.items.append("adafruit-circuitpython-register") -%}
 {%- endif %}
 {%- if cookiecutter.other_requirements != "" %}
     {%- set tests = cookiecutter.other_requirements -%}
-    {%- do list.items.extend(tests.replace(" ", "").split(",")) -%}
+    {%- do req_list.items.extend(tests.replace(" ", "").split(",")) -%}
 {%- endif -%}
 {# put keywords into an iterable list, based on word wrapping #}
 {%- set kw_list = namespace(kw_list=[]) -%}
@@ -50,7 +50,7 @@ setup(
     author_email='circuitpython@adafruit.com',
 
     install_requires=[
-{{ list.items|unique|join(",\n")|indent(width=8,first=True) }}
+{{ req_list.items|unique|join(",\n")|indent(width=8,first=True) }}
     ],
 
     # Choose your license
