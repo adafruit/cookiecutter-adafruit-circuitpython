@@ -8,6 +8,6 @@
     "company": "",
     "requires_bus_device": "",
     "requires_register": "",
-    "other_requirements": ""
-
+    "other_requirements": "",
+    "_extensions": ["jinja2.ext.do"]
 }
