@@ -30,14 +30,18 @@ Prompts
 --------
 
 * ``library_name`` - Shortest name for the library. Usually a chip name such as LIS3DH.
-* ``depends_on_bus_device`` - Determines whether to add comments about a dependency on `BusDevice <https://github.com/adafruit/Adafruit_CircuitPython_BusDevice>`_.
-  If the library uses BusDevice, enter ``y`` or ``yes`` to include. If the library doesn't use BusDevice, all other entries including empty, will not include BusDevice.
-* ``depends_on_register`` - Determines whether to add comments about a dependency on `Register <https://github.com/adafruit/Adafruit_CircuitPython_Register>`_.
-  If the library uses Register, enter ``y`` or ``yes`` to include. If the library doesn't use Register, all other entries including empty, will not include Register.
+* ``library_prefix`` - Used to prefix the code to the organization creating the library. For example, Adafruit supported libraries should say "adafruit" here. Do not add a - or _.
+* ``library_description`` - Used to provide a description of the library.
+* ``library_keywords`` - Used to populate keywords for PyPi. Enter a comma separated string of keywords.
 * ``author`` - Who you are! Sets the copyright to you.
 * ``github_user`` - GitHub user or organization which will host this repo. For example, Adafruit funded libraries should say "adafruit" here.
-* ``library_prefix`` - Used to prefix the code to the organization creating the library. For example, Adafruit supported libraries should say "adafruit" here. Do not add a - or _.
 * ``company`` - Used to give Copyright credit to the company funding the library. For example, Adafruit funded libraries should say "Adafruit Industries" here.
+* ``requires_bus_device`` - Determines whether to add comments about a dependency on `BusDevice <https://github.com/adafruit/Adafruit_CircuitPython_BusDevice>`_.
+  If the library uses BusDevice, enter ``y`` or ``yes`` to include. If the library doesn't use BusDevice, all other entries including empty, will not include BusDevice.
+* ``requires_register`` - Determines whether to add comments about a dependency on `Register <https://github.com/adafruit/Adafruit_CircuitPython_Register>`_.
+  If the library uses Register, enter ``y`` or ``yes`` to include. If the library doesn't use Register, all other entries including empty, will not include Register.
+* ``other_requirements`` - Adds any other module dependencies for PyPi. Enter a comma separated string of modules
+  (e.g. 'adafruit-circuitpython-pca9685, adafruit-circuitpython-motor'). NOTE: ``Adafruit-Blinka`` is always included, so no need to include it here.
 
 Post Generation Cleanup
 ------------------------
