@@ -49,8 +49,7 @@ setup(
     author='Adafruit Industries',
     author_email='circuitpython@adafruit.com',
 
-    install_requires=[
-{{ req_list.items|unique|join(",\n")|indent(width=8,first=True) }}
+    install_requires=['{{ req_list.items|unique|join("',\n'")|indent(width=22) }}'
     ],
 
     # Choose your license
