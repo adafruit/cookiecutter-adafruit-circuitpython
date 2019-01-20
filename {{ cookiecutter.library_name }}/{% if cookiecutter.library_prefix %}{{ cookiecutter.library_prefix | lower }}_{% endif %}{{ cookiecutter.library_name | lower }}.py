@@ -25,7 +25,7 @@
 
 {%- if cookiecutter.library_description != "" %}
     {{ cookiecutter.library_description }}
-{%- else %}
+{% else %}
 .. todo:: Describe what the library does.
 {%- endif %}
 
