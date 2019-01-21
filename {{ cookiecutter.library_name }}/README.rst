@@ -25,7 +25,7 @@ Introduction
     :alt: Build Status
 
 {% if cookiecutter.library_description != "" %}
-    {{ cookiecutter.library_description }}
+    {{- cookiecutter.library_description }}
 {% else %}
 .. todo:: Describe what the library does.
 {% endif %}
