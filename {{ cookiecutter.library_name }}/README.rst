@@ -3,7 +3,7 @@
 {% else -%}
     {% set prefix = '' -%}
 {% endif -%}
-{% set repo_name = prefix + "CircuitPython_" + cookiecutter.library_name|capitalize -%}
+{% set repo_name = prefix + "CircuitPython_" + cookiecutter.library_name -%}
 {% set full_repo_name = cookiecutter.github_user + "/" + repo_name -%}
 Introduction
 ============

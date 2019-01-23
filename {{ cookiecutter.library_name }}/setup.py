@@ -43,7 +43,7 @@ setup(
     long_description_content_type='text/x-rst',
 
     # The project's main homepage.
-    url='https://github.com/adafruit/Adafruit_CircuitPython_{{ cookiecutter.library_name|capitalize }}',
+    url='https://github.com/adafruit/Adafruit_CircuitPython_{{ cookiecutter.library_name }}',
 
     # Author details
     author='Adafruit Industries',
