@@ -1,9 +1,13 @@
 {
     "library_name": null,
-    "depends_on_bus_device": "",
-    "depends_on_register": "",
+    "library_prefix": "",
+    "library_description": "",
+    "library_keywords": "",
     "author": null,
     "github_user": "adafruit",
-    "library_prefix": "",
-    "company": ""
+    "company": "",
+    "requires_bus_device": "",
+    "requires_register": "",
+    "other_requirements": "",
+    "_extensions": ["jinja2.ext.do"]
 }

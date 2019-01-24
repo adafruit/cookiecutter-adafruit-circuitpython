@@ -24,17 +24,21 @@ Introduction
     :target: https://travis-ci.com/{{ full_repo_name }}
     :alt: Build Status
 
+{% if cookiecutter.library_description != "" %}
+    {{- cookiecutter.library_description }}
+{% else %}
 .. todo:: Describe what the library does.
+{% endif %}
 
 Dependencies
 =============
 This driver depends on:
 
 * `Adafruit CircuitPython <https://github.com/adafruit/circuitpython>`_
-{%- if cookiecutter.depends_on_bus_device in ["y", "yes"] %}
+{%- if cookiecutter.requires_bus_device in ["y", "yes"] %}
 * `Bus Device <https://github.com/adafruit/Adafruit_CircuitPython_BusDevice>`_
 {%- endif %}
-{%- if cookiecutter.depends_on_register in ["y", "yes"] %}
+{%- if cookiecutter.requires_register in ["y", "yes"] %}
 * `Register <https://github.com/adafruit/Adafruit_CircuitPython_Register>`_
 {%- endif %}
 
