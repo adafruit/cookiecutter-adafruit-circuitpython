@@ -11,8 +11,9 @@
     {%- do req_list.items.extend(tests.replace(" ", "").split(",")) -%}
 {%- endif -%}
 {# put keywords into an iterable list, based on word wrapping #}
-{%- set kw_list = namespace(kw_list=[]) -%}
-{%- set wrapped = cookiecutter.library_keywords|wordwrap(break_long_words=False) -%}
+{%- set kw_list = namespace(kw_list=[], default=["adafruit", "blinka", "circuitpython", "micropython"]) -%}
+{%- do kw_list.default.extend(cookiecutter.library_keywords.split(" ")) -%}
+{%- set wrapped = kw_list.default|unique|join(",")|wordwrap(break_long_words=False) -%}
 {%- do kw_list.kw_list.extend(wrapped.split("\n")) -%}
 """A setuptools based setup module.
 
@@ -68,7 +69,7 @@ setup(
     ],
 
     # What does your project relate to?
-    keywords='{{ kw_list.kw_list|join("'\n'")|indent(width=13) }}',
+    keywords='{{ kw_list.kw_list|join(" '\n'")|indent(width=13) }}',
 
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
