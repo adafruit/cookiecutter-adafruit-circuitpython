@@ -32,7 +32,7 @@ Prompts
 * ``library_name`` - Shortest name for the library. Usually a chip name such as LIS3DH.
 * ``library_prefix`` - Used to prefix the code to the organization creating the library. For example, Adafruit supported libraries should say "adafruit" here. Do not add a - or _.
 * ``library_description`` - Write a sentence describing the purpose of this library (e.g. ``CircuitPython helper library for the DC & Stepper Motor FeatherWing, Shield and Pi Hat kits.``).
-* ``library_keywords`` - Used to populate keywords for PyPi. Enter a string of keywords (e.g ``dht temp humidity``) NOTE: The following are included by default: ``adafruit``, ``blinka``, ``circuitpython``, ``micropython``.
+* ``library_keywords`` - Used to populate keywords for PyPi. Enter a string of keywords (e.g ``dht temp humidity``) NOTE: The following are included by default: ``adafruit``, ``blinka``, ``circuitpython``, ``micropython``, and the ``library_name`` you enter.
 * ``author`` - Who you are! Sets the copyright to you.
 * ``github_user`` - GitHub user or organization which will host this repo. For example, Adafruit funded libraries should say "adafruit" here.
 * ``company`` - Used to give Copyright credit to the company funding the library. For example, Adafruit funded libraries should say "Adafruit Industries" here.

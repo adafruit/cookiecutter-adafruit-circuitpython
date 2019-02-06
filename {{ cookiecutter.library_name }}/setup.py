@@ -12,6 +12,7 @@
 {%- endif -%}
 {# put keywords into an iterable list, based on word wrapping #}
 {%- set kw_list = namespace(kw_list=[], default=["adafruit", "blinka", "circuitpython", "micropython"]) -%}
+{%- do kw_list.default.append(cookiecutter.library_name|lower) -%}
 {%- do kw_list.default.extend(cookiecutter.library_keywords.split(" ")) -%}
 {%- set wrapped = kw_list.default|unique|join(" ")|wordwrap(break_long_words=False) -%}
 {%- do kw_list.kw_list.extend(wrapped.split("\n")) -%}
