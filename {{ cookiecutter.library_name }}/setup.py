@@ -16,6 +16,7 @@
 {%- do kw_list.default.extend(cookiecutter.library_keywords.split(" ")) -%}
 {%- set wrapped = kw_list.default|unique|join(" ")|wordwrap(break_long_words=False) -%}
 {%- do kw_list.kw_list.extend(wrapped.split("\n")) -%}
+{%- set pypi_name = cookiecutter.library_name|lower|replace("_", "-") -%}
 """A setuptools based setup module.
 
 See:
@@ -35,7 +36,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='adafruit-circuitpython-{{ cookiecutter.library_name|lower }}',
+    name='adafruit-circuitpython-{{ pypi_name }}',
 
     use_scm_version=True,
     setup_requires=['setuptools_scm'],

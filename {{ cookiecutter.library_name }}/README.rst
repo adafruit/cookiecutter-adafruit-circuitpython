@@ -5,6 +5,7 @@
 {% endif -%}
 {% set repo_name = prefix + "CircuitPython_" + cookiecutter.library_name -%}
 {% set full_repo_name = cookiecutter.github_user + "/" + repo_name -%}
+{%- set pypi_name = cookiecutter.library_name|lower|replace("_", "-") -%}
 Introduction
 ============
 
@@ -47,23 +48,25 @@ This is easily achieved by downloading
 `the Adafruit library and driver bundle <https://github.com/adafruit/Adafruit_CircuitPython_Bundle>`_.
 
 Installing from PyPI
---------------------
+=====================
 .. note:: This library is not available on PyPI yet. Install documentation is included
    as a standard element. Stay tuned for PyPI availability!
+
 .. todo:: Remove the above note if PyPI version is/will be available at time of release.
    If the library is not planned for PyPI, remove the entire 'Installing from PyPI' section.
+
 On supported GNU/Linux systems like the Raspberry Pi, you can install the driver locally `from
 PyPI <https://pypi.org/project/adafruit-circuitpython-{{ cookiecutter.library_name|lower }}/>`_. To install for current user:
 
 .. code-block:: shell
 
-    pip3 install adafruit-circuitpython-{{ cookiecutter.library_name|lower }}
+    pip3 install adafruit-circuitpython-{{ pypi_name }}
 
 To install system-wide (this may be required in some cases):
 
 .. code-block:: shell
 
-    sudo pip3 install adafruit-circuitpython-{{ cookiecutter.library_name|lower }}
+    sudo pip3 install adafruit-circuitpython-{{ pypi_name }}
 
 To install in a virtual environment in your current project:
 
@@ -72,7 +75,7 @@ To install in a virtual environment in your current project:
     mkdir project-name && cd project-name
     python3 -m venv .env
     source .env/bin/activate
-    pip3 install adafruit-circuitpython-{{ cookiecutter.library_name|lower }}
+    pip3 install adafruit-circuitpython-{{ pypi_name }}
 
 Usage Example
 =============
