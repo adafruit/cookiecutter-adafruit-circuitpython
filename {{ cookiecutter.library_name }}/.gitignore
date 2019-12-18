@@ -4,7 +4,7 @@ __pycache__
 _build
 *.pyc
 .env
-build*
+build*/
 bundles
 *.DS_Store
 .eggs
