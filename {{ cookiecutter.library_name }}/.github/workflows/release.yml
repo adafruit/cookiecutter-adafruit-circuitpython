@@ -27,14 +27,18 @@ jobs:
     - name: Versions
       run: |
         python3 --version
-    - uses: actions/checkout@v1
+    - name: Checkout Current Repo
+      uses: actions/checkout@v1
       with:
         submodules: true
+    - name: Checkout tools repo
+      uses: actions/checkout@v2
+      with:
+        repository: adafruit/actions-ci-circuitpython-libs
+        path: actions-ci
     - name: Install deps
       run: |
-        sudo apt-get install -y gettext
-        pip install -r requirements.txt
-        pip install circuitpython-build-tools
+        source actions-ci/install.sh
     - name: Build assets
       run: circuitpython-build-bundles --filename_prefix ${{ steps.repo-name.outputs.repo-name }} --library_location .
     - name: Upload Release Assets
