@@ -9,5 +9,6 @@
     "requires_bus_device": "",
     "requires_register": "",
     "other_requirements": "",
-    "_extensions": ["jinja2.ext.do"]
+    "_extensions": ["jinja2.ext.do"],
+    "_copy_without_render": ["*.github/*"]
 }
