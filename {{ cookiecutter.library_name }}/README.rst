@@ -21,8 +21,8 @@ Introduction
     :target: https://discord.gg/nBQh6qu
     :alt: Discord
 
-.. image:: https://travis-ci.com/{{ full_repo_name }}.svg?branch=master
-    :target: https://travis-ci.com/{{ full_repo_name }}
+.. image:: https://github.com/{{ full_repo_name }}/workflows/Build%20CI/badge.svg
+    :target: https://github.com/{{ full_repo_name }}/actions
     :alt: Build Status
 
 {% if cookiecutter.library_description != "" %}
