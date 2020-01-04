@@ -23,7 +23,7 @@ jobs:
         submodules: true
     - name: Install deps
       run: |
-        pip install -r $GITHUB_WORKSPACE/test_requirements.txt
+        pip install -r $GITHUB_WORKSPACE/tests_requirements.txt
     - name: Run cookiecutter tests
       run: |
         pytest -v
