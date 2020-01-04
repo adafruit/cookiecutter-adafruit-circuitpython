@@ -21,11 +21,6 @@ jobs:
       uses: actions/checkout@v1
       with:
         submodules: true
-    - name: Checkout tools repo
-      uses: actions/checkout@v2
-      with:
-        repository: adafruit/actions-ci-circuitpython-libs
-        path: actions-ci
     - name: Install deps
       run: |
         pip -r $GITHUB_WORKSPACE/test_requirements.txt
