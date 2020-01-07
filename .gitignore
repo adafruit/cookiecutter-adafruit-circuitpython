@@ -1,0 +1,9 @@
+.venv
+.env
+
+*.pyc
+
+.pytest*
+__pycache__
+
+.cookie_test/
