@@ -1,5 +1,6 @@
 .venv
 .env
+.python-version
 
 *.pyc
 
@@ -7,3 +8,5 @@
 __pycache__
 
 .cookie_test/
+
+.vscode/

@@ -4,6 +4,7 @@ __pycache__
 _build
 *.pyc
 .env
+.python-version
 build*/
 bundles
 *.DS_Store
