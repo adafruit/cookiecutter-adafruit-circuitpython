@@ -74,7 +74,7 @@ In any situation, you may send an email to <support@adafruit.com>.
 On the Adafruit Discord, you may send an open message from any channel
 to all Community Helpers by tagging @community moderators. You may also send an
 open message from any channel, or a direct message to @kattni#1507,
-@tannewt#4653, @Dan Halbert#1614, @cater#2442, @sommersoft#0222, or
+@tannewt#4653, @danh#1614, @cater#2442, @sommersoft#0222, or
 @Andon#8175.
 
 Email and direct message reports will be kept confidential.
