@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
+
+# SPDX-FileCopyrightText: 2017 Scott Shawcroft, written for Adafruit Industries
 #
+# SPDX-License-Identifier: MIT
+
 # Adafruit MCP9808 Library documentation build configuration file, created by
 # sphinx-quickstart on Fri Nov 11 07:42:21 2016.
 #
