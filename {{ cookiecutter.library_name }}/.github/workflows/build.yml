@@ -61,7 +61,7 @@ jobs:
       run: sphinx-build -E -W -b html . _build/html
     - name: Build README
       run: |
-        pip install --user --upgrade setuptools wheel twine readme_renderer testresources
+        pip install --upgrade setuptools wheel twine readme_renderer testresources
         python setup.py sdist
         python setup.py bdist_wheel --universal
         twine check dist/*
