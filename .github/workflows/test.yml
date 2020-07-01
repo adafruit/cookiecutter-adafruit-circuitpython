@@ -31,9 +31,3 @@ jobs:
     - name: Run cookiecutter tests
       run: |
         pytest -v
-    - name: Test README
-      run: |
-        pip install --user --upgrade setuptools wheel twine readme_renderer testresources
-        python setup.py sdist
-        python setup.py bdist_wheel --universal
-        twine check dist/*
