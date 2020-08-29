@@ -21,13 +21,21 @@ Introduction
     :target: https://adafru.it/discord
     :alt: Discord
 
+{% if cookiecutter.ci_service == "GitHub Actions" %}
 .. image:: https://github.com/{{ full_repo_name }}/workflows/Build%20CI/badge.svg
     :target: https://github.com/{{ full_repo_name }}/actions
     :alt: Build Status
+{% elif cookiecutter.ci_service == "TravisCI" %}
+.. image:: https://travis-ci.org/{{ full_repo_name }}.svg?branch=master
+    :target: https://travis-ci.org/{{ full_repo_name }}
+    :alt: Build Status
+{% endif %}
 
+{% if cookiecutter.target_bundle == "Adafruit" %}
 .. image:: https://img.shields.io/badge/code%20style-black-000000.svg
     :target: https://github.com/psf/black
     :alt: Code Style: Black
+{% endif %}
 
 {% if cookiecutter.library_description != "" %}
     {{- cookiecutter.library_description }}
