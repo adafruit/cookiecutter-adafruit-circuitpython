@@ -39,6 +39,9 @@ intersphinx_mapping = {
     "CircuitPython": ("https://circuitpython.readthedocs.io/en/latest/", None),
 }
 
+# Show the docstring from both the class and its __init__() method.
+autoclass_content = "both"
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
 
