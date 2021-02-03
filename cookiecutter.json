@@ -13,7 +13,6 @@
     "requires_bus_device": "",
     "requires_register": "",
     "other_requirements": "",
-    "ci_service": ["GitHub Actions", "TravisCI", "None"],
     "_extensions": ["jinja2.ext.do"],
     "_copy_without_render": ["*.github/*"]
 }
