@@ -1,12 +1,12 @@
 {
-    "library_name": null,
-    "library_description": "",
-    "library_keywords": "",
-    "author": null,
     "target_bundle": [
         "Adafruit",
         "Community"
     ],
+    "library_name": null,
+    "library_description": "",
+    "library_keywords": "",
+    "author": null,
     "library_prefix": "{%- if cookiecutter.target_bundle == 'Adafruit' -%} adafruit {%- endif -%}",
     "github_user": "{%- if cookiecutter.target_bundle == 'Adafruit' -%} adafruit {%- endif -%}",
     "company": "",

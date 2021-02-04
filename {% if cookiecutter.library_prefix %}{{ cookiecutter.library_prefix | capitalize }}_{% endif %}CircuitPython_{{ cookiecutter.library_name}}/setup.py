@@ -49,7 +49,7 @@ setup(
     long_description=long_description,
     long_description_content_type="text/x-rst",
     # The project's main homepage.
-    url="https://github.com/adafruit/Adafruit_CircuitPython_{{ cookiecutter.library_name }}",
+    url="https://github.com/{{ cookiecutter.github_user }}/{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize}}_{% endif %}CircuitPython_{{ cookiecutter.library_name }}.git",
     # Author details
     author="Adafruit Industries",
     author_email="circuitpython@adafruit.com",
