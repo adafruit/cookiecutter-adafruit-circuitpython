@@ -55,6 +55,8 @@ This is easily achieved by downloading
 or individual libraries can be installed using
 `circup <https://github.com/adafruit/circup>`_.
 
+{%- if cookiecutter.pypi_release in  ["y", "yes"] -%}
+
 Installing from PyPI
 =====================
 .. note:: This library is not available on PyPI yet. Install documentation is included
@@ -64,7 +66,8 @@ Installing from PyPI
    If the library is not planned for PyPI, remove the entire 'Installing from PyPI' section.
 
 On supported GNU/Linux systems like the Raspberry Pi, you can install the driver locally `from
-PyPI <https://pypi.org/project/adafruit-circuitpython-{{ cookiecutter.library_name|lower }}/>`_. To install for current user:
+PyPI <https://pypi.org/project/adafruit-circuitpython-{{ cookiecutter.library_name|lower }}/>`_. 
+To install for current user:
 
 .. code-block:: shell
 
@@ -85,19 +88,23 @@ To install in a virtual environment in your current project:
     source .env/bin/activate
     pip3 install adafruit-circuitpython-{{ pypi_name }}
 
+{% endif %}
+
 Usage Example
 =============
 
-.. todo:: Add a quick, simple example. It and other examples should live in the examples folder and be included in docs/examples.rst.
+.. todo:: Add a quick, simple example. It and other examples should live in the 
+examples folder and be included in docs/examples.rst.
 
 Contributing
 ============
 
 Contributions are welcome! Please read our `Code of Conduct
-<https://github.com/{{ full_repo_name }}/blob/master/CODE_OF_CONDUCT.md>`_
+<https://github.com/{{ full_repo_name }}/blob/{{cookiecutter.default_branch}}/CODE_OF_CONDUCT.md>`_
 before contributing to help this project stay welcoming.
 
 Documentation
 =============
 
-For information on building library documentation, please check out `this guide <https://learn.adafruit.com/creating-and-sharing-a-circuitpython-library/sharing-our-docs-on-readthedocs#sphinx-5-1>`_.
+For information on building library documentation, please check out
+`this guide <https://learn.adafruit.com/creating-and-sharing-a-circuitpython-library/sharing-our-docs-on-readthedocs#sphinx-5-1>`_.

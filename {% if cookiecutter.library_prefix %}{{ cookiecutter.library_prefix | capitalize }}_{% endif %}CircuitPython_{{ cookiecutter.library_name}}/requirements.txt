@@ -14,4 +14,4 @@
     {%- set tests = cookiecutter.other_requirements -%}
     {%- do req_list.items.extend(tests.replace(" ", "").split(",")) -%}
 {%- endif -%}
-{{ req_list.items|unique|join("\n") }}
+{{ req_list.items|sort|unique|join("\n") }}
