@@ -49,7 +49,7 @@ def compare_template_dirs(*, library_name='test', library_prefix=None):
         generated_folder_name = "{}_CircuitPython_{}".format(library_prefix, library_name)
     else:
         generated_folder_name = "CircuitPython_{}".format(library_name)
-    # generated_path = output_dir / library_name
+    
     generated_path = output_dir / generated_folder_name
     assert generated_path.exists()
 
@@ -100,7 +100,7 @@ def test_new_cookiecutter_only_required_entries():
     )
 
     assert new_cookie == '{}/Adafruit_CircuitPython_test'.format(output_dir.resolve())
-    assert compare_template_dirs(library_prefix="adafruit")
+    assert compare_template_dirs(library_prefix="Adafruit")
 
 def test_new_cookiecutter_all_entries():
     """ Basic test of running cookiecutter, supplying info for all fields.
@@ -116,12 +116,10 @@ def test_new_cookiecutter_all_entries():
         if not key.startswith('_'):
             if key == "target_bundle":
                 test_context[key] = 'community'
-            if key == "default_branch":
-                test_context[key] = 'master'
             if key == "pypi_release":
                 test_context[key] = 'yes'
-            if key == "target_bundle":
-                test_context[key] = 'community'
+            if key == "default_branch":
+                test_context[key] = 'master'
             else:
                 test_context[key] = 'test'
         else:
@@ -136,4 +134,4 @@ def test_new_cookiecutter_all_entries():
     )
 
     assert new_cookie == '{}/Test_CircuitPython_test'.format(output_dir.resolve())
-    assert compare_template_dirs(library_prefix='test')
+    assert compare_template_dirs(library_prefix='Test')
