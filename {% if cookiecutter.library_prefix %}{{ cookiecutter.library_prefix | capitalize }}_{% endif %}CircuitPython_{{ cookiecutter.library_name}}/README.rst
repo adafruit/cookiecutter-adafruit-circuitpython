@@ -66,7 +66,7 @@ Installing from PyPI
    If the library is not planned for PyPI, remove the entire 'Installing from PyPI' section.
 
 On supported GNU/Linux systems like the Raspberry Pi, you can install the driver locally `from
-PyPI <https://pypi.org/project/adafruit-circuitpython-{{ cookiecutter.library_name|lower }}/>`_. 
+PyPI <https://pypi.org/project/adafruit-circuitpython-{{ cookiecutter.library_name|lower }}/>`_.
 To install for current user:
 
 .. code-block:: shell
@@ -93,7 +93,7 @@ To install in a virtual environment in your current project:
 Usage Example
 =============
 
-.. todo:: Add a quick, simple example. It and other examples should live in the 
+.. todo:: Add a quick, simple example. It and other examples should live in the
 examples folder and be included in docs/examples.rst.
 
 Contributing
