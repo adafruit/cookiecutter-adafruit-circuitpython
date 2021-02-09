@@ -49,7 +49,7 @@ def compare_template_dirs(*, library_name='test', library_prefix=None):
         generated_folder_name = "{}_CircuitPython_{}".format(library_prefix, library_name)
     else:
         generated_folder_name = "CircuitPython_{}".format(library_name)
-    
+
     generated_path = output_dir / generated_folder_name
     assert generated_path.exists()
 
