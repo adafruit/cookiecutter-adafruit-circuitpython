@@ -55,6 +55,16 @@ This is easily achieved by downloading
 or individual libraries can be installed using
 `circup <https://github.com/adafruit/circup>`_.
 
+{%- if cookiecutter.target_bundle == 'Adafruit' %}
+
+.. todo:: Describe the Adafruit product this library works with. For PCBs, you can also add the
+image fromn the assets folder in the PCB's gihub repo.
+
+<a href="http://www.adafruit.com/products/{{cookiecutter.adafruit_pid}}">
+Click here to purchase one from the Adafruit shop</a>
+
+{% endif -%}
+
 {%- if cookiecutter.pypi_release in  ["y", "yes"] -%}
 
 Installing from PyPI
@@ -63,7 +73,6 @@ Installing from PyPI
    as a standard element. Stay tuned for PyPI availability!
 
 .. todo:: Remove the above note if PyPI version is/will be available at time of release.
-   If the library is not planned for PyPI, remove the entire 'Installing from PyPI' section.
 
 On supported GNU/Linux systems like the Raspberry Pi, you can install the driver locally `from
 PyPI <https://pypi.org/project/adafruit-circuitpython-{{ cookiecutter.library_name|lower }}/>`_.

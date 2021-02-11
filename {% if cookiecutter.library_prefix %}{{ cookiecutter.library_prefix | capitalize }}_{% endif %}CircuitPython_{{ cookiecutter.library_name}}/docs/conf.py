@@ -52,8 +52,8 @@ master_doc = "index"
 
 # General information about the project.
 project = "{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize }} {% endif %} CircuitPython {{ cookiecutter.library_name }} Library"
-copyright = "{% now 'utc', '%Y' %} {{ cookiecutter.author }}"
-author = "{{ cookiecutter.author }}"
+copyright = "{% now 'utc', '%Y' %} {{ cookiecutter.author_name }}"
+author = "{{ cookiecutter.author_name }}"
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the

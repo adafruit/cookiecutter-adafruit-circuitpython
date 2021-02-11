@@ -1,5 +1,5 @@
 # SPDX-FileCopyrightText: 2017 Scott Shawcroft, written for Adafruit Industries
-# SPDX-FileCopyrightText: Copyright (c) {% now 'utc', '%Y' %} {{ cookiecutter.author }}{% if cookiecutter.company %} for {{ cookiecutter.company }}{% endif %}
+# SPDX-FileCopyrightText: Copyright (c) {% now 'utc', '%Y' %} {{ cookiecutter.author_name }}{% if cookiecutter.company %} for {{ cookiecutter.company }}{% endif %}
 #
 # SPDX-License-Identifier: MIT
 """
@@ -12,7 +12,7 @@
 .. todo:: Describe what the library does.
 {% endif %}
 
-* Author(s): {{ cookiecutter.author }}
+* Author(s): {{ cookiecutter.author_name }}
 
 Implementation Notes
 --------------------
