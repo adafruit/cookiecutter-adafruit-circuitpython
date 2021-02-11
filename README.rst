@@ -29,7 +29,6 @@ Then, fill in the prompts and accomplish some post generation cleanup:
 Prompts
 --------
 
-* ```` - 
 * ``target_bundle`` - Adafruit bundle or Community library bundle
 * ``github_user`` - GitHub user or organization which will host this repo. For example, Adafruit funded libraries should say "adafruit" here.
 * ``author_name`` - Who you are! Sets the copyright to you.
