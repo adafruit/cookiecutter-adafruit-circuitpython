@@ -29,19 +29,26 @@ Then, fill in the prompts and accomplish some post generation cleanup:
 Prompts
 --------
 
+* ```` - 
+* ``target_bundle`` - Adafruit bundle or Community library bundle
+* ``github_user`` - GitHub user or organization which will host this repo. For example, Adafruit funded libraries should say "adafruit" here.
+* ``author_name`` - Who you are! Sets the copyright to you.
+* ``company`` - Used to give Copyright credit to the company funding the library. For example, Adafruit funded libraries should say "Adafruit Industries" here.
 * ``library_name`` - Shortest name for the library. Usually a chip name such as LIS3DH.
-* ``library_prefix`` - Used to prefix the code to the organization creating the library. For example, Adafruit supported libraries should say "adafruit" here. Do not add a - or _.
 * ``library_description`` - Write a sentence describing the purpose of this library (e.g. ``CircuitPython helper library for the DC & Stepper Motor FeatherWing, Shield and Pi Hat kits.``).
 * ``library_keywords`` - Used to populate keywords for PyPi. Enter a string of keywords (e.g ``dht temp humidity``) NOTE: The following are included by default: ``adafruit``, ``blinka``, ``circuitpython``, ``micropython``, and the ``library_name`` you enter.
-* ``author`` - Who you are! Sets the copyright to you.
-* ``github_user`` - GitHub user or organization which will host this repo. For example, Adafruit funded libraries should say "adafruit" here.
-* ``company`` - Used to give Copyright credit to the company funding the library. For example, Adafruit funded libraries should say "Adafruit Industries" here.
+* ``library_prefix`` - Used to prefix the code to the organization creating the library. For example, Adafruit supported libraries should say "adafruit" here. Do not add a - or _.
+* ``adafruit_pid`` -  The product ID for the Adafruit product includes a link to the product in the README. Only applies to Adafruit Bundle.
 * ``requires_bus_device`` - Determines whether to add comments about a dependency on `BusDevice <https://github.com/adafruit/Adafruit_CircuitPython_BusDevice>`_.
   If the library uses BusDevice, enter ``y`` or ``yes`` to include. If the library doesn't use BusDevice, all other entries including empty, will not include BusDevice.
 * ``requires_register`` - Determines whether to add comments about a dependency on `Register <https://github.com/adafruit/Adafruit_CircuitPython_Register>`_.
   If the library uses Register, enter ``y`` or ``yes`` to include. If the library doesn't use Register, all other entries including empty, will not include Register.
 * ``other_requirements`` - Adds any other module dependencies for PyPi. Enter a comma separated string of modules
   (e.g. ``adafruit-circuitpython-pca9685, adafruit-circuitpython-motor``). NOTE: ``Adafruit-Blinka`` is always included, so no need to include it here.
+* ``pypi_release`` - Will this library be releaased on PyPI? If so, enter ``y`` or ``yes`` to include the setup.py. For Adafruit libraries this defaults to Yes.
+* ``sphinx_docs`` - Should the Sphinx based documentation be included in your repo? If so, enter ``y`` or ``yes`` to include the setup.py. For Adafruit libraries this defaults to Yes.
+* ``default_branch`` - What is the default branch used in your Githiub repos? Choice of Master or Main. For Adafruit libraries this defaults to Master.
+
 
 Post Generation Cleanup
 ------------------------

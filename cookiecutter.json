@@ -5,7 +5,7 @@
     ],
     "github_user": "{%- if cookiecutter.target_bundle == 'Adafruit' -%} adafruit {%- endif -%}",
     "author_name": null,
-    "company": "",
+    "company": "{%- if cookiecutter.target_bundle == 'Adafruit' -%} Adafruit Industries {%- endif -%}",
     "library_name": null,
     "library_description": "",
     "library_keywords": "",
