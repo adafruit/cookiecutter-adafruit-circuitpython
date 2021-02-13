@@ -1,5 +1,5 @@
 # SPDX-FileCopyrightText: 2017 Scott Shawcroft, written for Adafruit Industries
-# SPDX-FileCopyrightText: Copyright (c) {% now 'utc', '%Y' %} {{ cookiecutter.author }}{% if cookiecutter.company %} for {{ cookiecutter.company }}{% endif %}
+# SPDX-FileCopyrightText: Copyright (c) {% now 'utc', '%Y' %} {{ cookiecutter.author_name }}{% if cookiecutter.company %} for {{ cookiecutter.company }}{% endif %}
 #
 # SPDX-License-Identifier: MIT
 
@@ -21,7 +21,15 @@
 {%- do kw_list.default.extend(cookiecutter.library_keywords.split(" ")) -%}
 {%- set wrapped = kw_list.default|unique|join(" ")|wordwrap(break_long_words=False) -%}
 {%- do kw_list.kw_list.extend(wrapped.split("\n")) -%}
-{%- set pypi_name = cookiecutter.library_name|lower|replace("_", "-") -%}
+{# create repo and pypi names #}
+{%- if cookiecutter.library_prefix -%}
+    {%- set repo_name = (cookiecutter.library_prefix | capitalize) -%}
+    {%- set repo_name = repo_name + '_CircuitPython_' -%}
+    {%- set repo_name = repo_name + cookiecutter.library_name -%}
+{%- else -%}
+    {%- set repo_name = 'CircuitPython_' + cookiecutter.library_name -%}
+{%- endif -%}
+{%- set pypi_name = repo_name|lower|replace("_", "-") -%}
 """A setuptools based setup module.
 
 See:
@@ -42,19 +50,35 @@ with open(path.join(here, "README.rst"), encoding="utf-8") as f:
     long_description = f.read()
 
 setup(
-    name="adafruit-circuitpython-{{ pypi_name }}",
+    {% if cookiecutter.target_bundle == 'Adafruit' -%}
+    # Adfruit Bundle Information
+    name="{{ pypi_name }}",
     use_scm_version=True,
     setup_requires=["setuptools_scm"],
     description="{{ cookiecutter.library_description }}",
     long_description=long_description,
     long_description_content_type="text/x-rst",
     # The project's main homepage.
-    url="https://github.com/adafruit/Adafruit_CircuitPython_{{ cookiecutter.library_name }}",
+    url="https://github.com/{{ cookiecutter.github_user }}/{{ repo_name }}.git",
     # Author details
     author="Adafruit Industries",
     author_email="circuitpython@adafruit.com",
+    {%- else -%}
+    # Community Bundle Information
+    name="{{ pypi_name }}",
+    use_scm_version=True,
+    setup_requires=["setuptools_scm"],
+    description="{{ cookiecutter.library_description }}",
+    long_description=long_description,
+    long_description_content_type="text/x-rst",
+    # The project's main homepage.
+    url="https://github.com/{{ cookiecutter.github_user }}/{{ repo_name }}.git",
+    # Author details
+    author="{{ cookiecutter.author_name }}",
+    author_email="",
+    {%- endif %}
     install_requires=[
-        "{{ req_list.items|unique|join('",\n"')|indent(width=8) }}",
+        "{{ req_list.items|sort|unique|join('",\n"')|indent(width=8) }}",
     ],
     # Choose your license
     license="MIT",
@@ -70,7 +94,7 @@ setup(
         "Programming Language :: Python :: 3.5",
     ],
     # What does your project relate to?
-    keywords="{{ kw_list.kw_list|join(' "\n"')|indent(width=13) }}",
+    keywords="{{ kw_list.kw_list|sort|unique|join(' "\n"')|indent(width=13) }}",
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
     # TODO: IF LIBRARY FILES ARE A PACKAGE FOLDER,

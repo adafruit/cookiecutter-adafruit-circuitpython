@@ -51,9 +51,9 @@ source_suffix = ".rst"
 master_doc = "index"
 
 # General information about the project.
-project = "{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize }} {% endif %}{{ cookiecutter.library_name }} Library"
-copyright = "{% now 'utc', '%Y' %} {{ cookiecutter.author }}"
-author = "{{ cookiecutter.author }}"
+project = "{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize }} {% endif %} CircuitPython {{ cookiecutter.library_name }} Library"
+copyright = "{% now 'utc', '%Y' %} {{ cookiecutter.author_name }}"
+author = "{{ cookiecutter.author_name }}"
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -133,7 +133,7 @@ html_static_path = ["_static"]
 html_favicon = "_static/favicon.ico"
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize }}{% endif %}{{ cookiecutter.library_name | capitalize }}Librarydoc"
+htmlhelp_basename = "{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize }}_{% endif %}CircuitPython_{{ cookiecutter.library_name | capitalize }}Librarydoc"
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -154,8 +154,8 @@ latex_elements = {
 latex_documents = [
     (
         master_doc,
-        "{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize }}{% endif %}{{ cookiecutter.library_name }}Library.tex",
-        "{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize }}{% endif %}{{ cookiecutter.library_name }} Library Documentation",
+        "{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize }}_{% endif %}CircuitPython_{{ cookiecutter.library_name }}Library.tex",
+        "{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize }} {% endif %}CircuitPython {{ cookiecutter.library_name }} Library Documentation",
         author,
         "manual",
     ),
@@ -168,8 +168,8 @@ latex_documents = [
 man_pages = [
     (
         master_doc,
-        "{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize }}{% endif %}{{ cookiecutter.library_name }}library",
-        "{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize }} {% endif %}{{ cookiecutter.library_name }} Library Documentation",
+        "{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize }}_{% endif %}CircuitPython_{{ cookiecutter.library_name }}Library",
+        "{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize }} {% endif %}CircuitPython {{ cookiecutter.library_name }} Library Documentation",
         [author],
         1,
     ),
@@ -183,10 +183,10 @@ man_pages = [
 texinfo_documents = [
     (
         master_doc,
-        "{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize }}{% endif %}{{ cookiecutter.library_name }}Library",
-        "{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize }}{% endif %} {{ cookiecutter.library_name }} Library Documentation",
+        "{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize }}_{% endif %}CircuitPython_{{ cookiecutter.library_name }}Library",
+        "{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize }} {% endif %}CircuitPython {{ cookiecutter.library_name }} Library Documentation",
         author,
-        "{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize }}{% endif %}{{ cookiecutter.library_name }}Library",
+        "{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize }}_{% endif %}CircuitPython_{{ cookiecutter.library_name }}Library",
         "One line description of project.",
         "Miscellaneous",
     ),
