@@ -60,8 +60,8 @@ or individual libraries can be installed using
 .. todo:: Describe the Adafruit product this library works with. For PCBs, you can also add the
 image fromn the assets folder in the PCB's gihub repo.
 
-<a href="http://www.adafruit.com/products/{{cookiecutter.adafruit_pid}}">
-Click here to purchase one from the Adafruit shop</a>
+`Purchase one from the Adafruit shop <http://www.adafruit.com/products/{{cookiecutter.adafruit_pid}}>`_
+
 
 {% endif -%}
 
