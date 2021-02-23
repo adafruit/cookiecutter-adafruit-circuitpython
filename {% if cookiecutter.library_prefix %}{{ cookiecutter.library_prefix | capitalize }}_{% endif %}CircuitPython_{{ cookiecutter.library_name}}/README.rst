@@ -9,13 +9,15 @@
 Introduction
 ============
 
+{% if cookiecutter.sphinx_docs | lower in ["yes", "y"] %}
 .. image:: https://readthedocs.org/projects/{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | lower | replace("_", "-")}}-{% endif %}circuitpython-{{ cookiecutter.library_name | lower }}/badge/?version=latest
-{%- if cookiecutter.target_bundle == 'Adafruit' -%}
+{%- if cookiecutter.target_bundle == 'Adafruit' %}
     :target: https://circuitpython.readthedocs.io/projects/{{ cookiecutter.library_name | lower }}/en/latest/
 {%- else %}
     :target: https://circuitpython-{{ cookiecutter.library_name | lower }}.readthedocs.io/
 {%- endif %}
     :alt: Documentation Status
+{% endif %}
 
 .. image:: https://img.shields.io/discord/327254708534116352.svg
     :target: https://adafru.it/discord
