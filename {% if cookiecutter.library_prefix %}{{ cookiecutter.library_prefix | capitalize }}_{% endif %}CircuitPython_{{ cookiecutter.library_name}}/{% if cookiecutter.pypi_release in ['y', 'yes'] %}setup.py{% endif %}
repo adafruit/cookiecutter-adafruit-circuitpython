@@ -51,7 +51,7 @@ with open(path.join(here, "README.rst"), encoding="utf-8") as f:
 
 setup(
     {% if cookiecutter.target_bundle == 'Adafruit' -%}
-    # Adfruit Bundle Information
+    # Adafruit Bundle Information
     name="{{ pypi_name }}",
     use_scm_version=True,
     setup_requires=["setuptools_scm"],
