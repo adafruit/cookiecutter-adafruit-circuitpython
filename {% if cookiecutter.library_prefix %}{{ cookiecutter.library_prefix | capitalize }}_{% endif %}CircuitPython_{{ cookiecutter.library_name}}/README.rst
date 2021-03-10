@@ -60,7 +60,7 @@ or individual libraries can be installed using
 {%- if cookiecutter.target_bundle == 'Adafruit' %}
 
 .. todo:: Describe the Adafruit product this library works with. For PCBs, you can also add the
-image fromn the assets folder in the PCB's gihub repo.
+image from the assets folder in the PCB's GitHub repo.
 
 `Purchase one from the Adafruit shop <http://www.adafruit.com/products/{{cookiecutter.adafruit_pid}}>`_
 
