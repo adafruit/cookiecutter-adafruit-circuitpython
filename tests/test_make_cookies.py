@@ -118,8 +118,6 @@ def test_new_cookiecutter_all_entries():
                 test_context[key] = 'community'
             if key == "pypi_release":
                 test_context[key] = 'yes'
-            if key == "default_branch":
-                test_context[key] = 'master'
             else:
                 test_context[key] = 'test'
         else:

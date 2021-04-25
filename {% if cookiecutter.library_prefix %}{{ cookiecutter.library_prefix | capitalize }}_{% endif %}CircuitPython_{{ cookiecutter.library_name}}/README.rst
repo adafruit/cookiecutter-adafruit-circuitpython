@@ -111,7 +111,7 @@ Contributing
 ============
 
 Contributions are welcome! Please read our `Code of Conduct
-<https://github.com/{{ full_repo_name }}/blob/{{cookiecutter.default_branch}}/CODE_OF_CONDUCT.md>`_
+<https://github.com/{{ full_repo_name }}/blob/HEAD/CODE_OF_CONDUCT.md>`_
 before contributing to help this project stay welcoming.
 
 Documentation
