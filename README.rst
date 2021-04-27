@@ -46,7 +46,6 @@ Prompts
   (e.g. ``adafruit-circuitpython-pca9685, adafruit-circuitpython-motor``). NOTE: ``Adafruit-Blinka`` is always included, so no need to include it here.
 * ``pypi_release`` - Will this library be releaased on PyPI? If so, enter ``y`` or ``yes`` to include the setup.py. For Adafruit libraries this defaults to Yes.
 * ``sphinx_docs`` - Should the Sphinx based documentation be included in your repo? If so, enter ``y`` or ``yes`` to include the setup.py. For Adafruit libraries this defaults to Yes.
-* ``default_branch`` - What is the default branch used in your Githiub repos? Choice of Master or Main. For Adafruit libraries this defaults to Master.
 
 
 Post Generation Cleanup

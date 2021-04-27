@@ -16,7 +16,6 @@
     "other_requirements": "",
     "pypi_release": "{%- if cookiecutter.target_bundle == 'Adafruit' -%} yes {%- else -%} no {%- endif -%}",
     "sphinx_docs":  "{%- if cookiecutter.target_bundle == 'Adafruit' -%} yes {%- else -%} no {%- endif -%}",
-    "default_branch": ["master", "main"],
     "_extensions": ["jinja2.ext.do"],
     "_copy_without_render": ["*.github/*"]
 }
