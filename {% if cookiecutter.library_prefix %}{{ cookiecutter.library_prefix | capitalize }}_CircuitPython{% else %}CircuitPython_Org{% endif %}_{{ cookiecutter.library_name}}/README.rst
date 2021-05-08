@@ -1,16 +1,18 @@
 {% if cookiecutter.library_prefix -%}
     {% set prefix = cookiecutter.library_prefix | capitalize + "_" -%}
+    {% set repo_name = prefix + "CircuitPython_" + cookiecutter.library_name -%}
 {% else -%}
     {% set prefix = '' -%}
+    {% set repo_name = "CircuitPython_Org_" + cookiecutter.library_name -%}
 {% endif -%}
-{% set repo_name = prefix + "CircuitPython_" + cookiecutter.library_name -%}
+
 {% set full_repo_name = cookiecutter.github_user + "/" + repo_name -%}
 {%- set pypi_name = cookiecutter.library_name|lower|replace("_", "-") -%}
 Introduction
 ============
 
 {% if cookiecutter.sphinx_docs | lower in ["yes", "y"] %}
-.. image:: https://readthedocs.org/projects/{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | lower | replace("_", "-")}}-{% endif %}circuitpython-{{ cookiecutter.library_name | lower }}/badge/?version=latest
+.. image:: https://readthedocs.org/projects/{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | lower | replace("_", "-")}}-circuitpython{% else %}circuitpython-org{% endif %}-{{ cookiecutter.library_name | lower }}/badge/?version=latest
 {%- if cookiecutter.target_bundle == 'Adafruit' %}
     :target: https://circuitpython.readthedocs.io/projects/{{ cookiecutter.library_name | lower }}/en/latest/
 {%- else %}
