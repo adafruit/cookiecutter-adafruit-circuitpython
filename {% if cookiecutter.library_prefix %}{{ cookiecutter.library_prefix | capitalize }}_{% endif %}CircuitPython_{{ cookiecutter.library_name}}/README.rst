@@ -63,11 +63,9 @@ or individual libraries can be installed using
 image from the assets folder in the PCB's GitHub repo.
 
 `Purchase one from the Adafruit shop <http://www.adafruit.com/products/{{cookiecutter.adafruit_pid}}>`_
-
-
 {% endif -%}
 
-{%- if cookiecutter.pypi_release in  ["y", "yes"] -%}
+{%- if cookiecutter.pypi_release in  ["y", "yes"] %}
 
 Installing from PyPI
 =====================
