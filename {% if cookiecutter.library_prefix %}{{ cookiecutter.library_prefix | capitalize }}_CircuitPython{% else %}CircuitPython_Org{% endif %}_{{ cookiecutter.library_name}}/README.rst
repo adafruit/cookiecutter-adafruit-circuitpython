@@ -12,7 +12,7 @@ Introduction
 ============
 
 {% if cookiecutter.sphinx_docs | lower in ["yes", "y"] %}
-.. image:: https://readthedocs.org/projects/{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | lower | replace("_", "-")}}-circuitpython{% else %}circuitpython-org{% endif %}-{{ cookiecutter.library_name | lower }}/badge/?version=latest
+.. image:: https://readthedocs.org/projects/{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | lower | replace("_", "-")}}-{% endif %}circuitpython-{{ cookiecutter.library_name | lower }}/badge/?version=latest
 {%- if cookiecutter.target_bundle == 'Adafruit' %}
     :target: https://circuitpython.readthedocs.io/projects/{{ cookiecutter.library_name | lower }}/en/latest/
 {%- else %}
