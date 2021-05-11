@@ -1,9 +1,11 @@
 {% if cookiecutter.library_prefix -%}
     {% set prefix = cookiecutter.library_prefix | capitalize + "_" -%}
+    {% set repo_name = prefix + "CircuitPython_" + cookiecutter.library_name -%}
 {% else -%}
     {% set prefix = '' -%}
+    {% set repo_name = "CircuitPython_Org_" + cookiecutter.library_name -%}
 {% endif -%}
-{% set repo_name = prefix + "CircuitPython_" + cookiecutter.library_name -%}
+
 {% set full_repo_name = cookiecutter.github_user + "/" + repo_name -%}
 {%- set pypi_name = cookiecutter.library_name|lower|replace("_", "-") -%}
 Introduction
