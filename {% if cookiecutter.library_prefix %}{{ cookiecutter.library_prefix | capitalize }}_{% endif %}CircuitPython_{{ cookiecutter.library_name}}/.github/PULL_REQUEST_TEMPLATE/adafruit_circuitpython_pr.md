@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2021 Adafruit Industries
+#
+# SPDX-License-Identifier: MIT
+
 Thank you for contributing! Before you submit a pull request, please read the following.
 
 Make sure any changes you're submitting are in line with the CircuitPython Design Guide, available here: https://circuitpython.readthedocs.io/en/latest/docs/design_guide.html
