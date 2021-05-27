@@ -7,7 +7,7 @@
 {%- endif -%}
 
 {% set full_repo_name = cookiecutter.github_user + "/" + repo_name -%}
-{%- set pypi_name = cookiecutter.library_name|lower|replace("_", "-") -%}
+{%- set pypi_name = cookiecutter.library_name|lower|replace("_", "-")|replace(" ", "-") -%}
 Introduction
 ============
 
@@ -77,7 +77,7 @@ Installing from PyPI
 .. todo:: Remove the above note if PyPI version is/will be available at time of release.
 
 On supported GNU/Linux systems like the Raspberry Pi, you can install the driver locally `from
-PyPI <https://pypi.org/project/{%- if cookiecutter.library_prefix -%}{{ cookiecutter.library_prefix }}-{%- endif -%}circuitpython-{{ cookiecutter.library_name|lower }}/>`_.
+PyPI <https://pypi.org/project/{%- if cookiecutter.library_prefix -%}{{ cookiecutter.library_prefix }}-{%- endif -%}circuitpython-{{ cookiecutter.library_name|lower|replace(" ", "-") }}/>`_.
 To install for current user:
 
 .. code-block:: shell
