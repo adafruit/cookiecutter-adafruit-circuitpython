@@ -17,7 +17,7 @@
 {%- endif -%}
 {# put keywords into an iterable list, based on word wrapping #}
 {%- set kw_list = namespace(kw_list=[], default=["adafruit", "blinka", "circuitpython", "micropython"]) -%}
-{%- do kw_list.default.append(cookiecutter.library_name|lower) -%}
+{%- do kw_list.default.append(cookiecutter.library_name|lower|replace(" ", "-")) -%}
 {%- do kw_list.default.extend(cookiecutter.library_keywords.split(" ")) -%}
 {%- set wrapped = kw_list.default|unique|join(" ")|wordwrap(break_long_words=False) -%}
 {%- do kw_list.kw_list.extend(wrapped.split("\n")) -%}
@@ -25,11 +25,11 @@
 {%- if cookiecutter.library_prefix -%}
     {%- set repo_name = (cookiecutter.library_prefix | capitalize) -%}
     {%- set repo_name = repo_name + '_CircuitPython_' -%}
-    {%- set repo_name = repo_name + cookiecutter.library_name -%}
+    {%- set repo_name = repo_name + cookiecutter.library_name | replace(" ", "_") -%}
 {%- else -%}
-    {%- set repo_name = 'CircuitPython_Org_' + cookiecutter.library_name -%}
+    {%- set repo_name = 'CircuitPython_Org_' + cookiecutter.library_name | replace(" ", "_") -%}
 {%- endif -%}
-{%- set pypi_name = repo_name|lower|replace("_", "-")|replace("circuitpython-org-", "circuitpython-") -%}
+{%- set pypi_name = repo_name|lower|replace("_", "-")|replace(" ", "-")|replace("circuitpython-org-", "circuitpython-") -%}
 """A setuptools based setup module.
 
 See:
@@ -99,5 +99,5 @@ setup(
     # simple. Or you can use find_packages().
     # TODO: IF LIBRARY FILES ARE A PACKAGE FOLDER,
     #       CHANGE `py_modules=['...']` TO `packages=['...']`
-    py_modules=["{%- if cookiecutter.library_prefix != '' -%}{{ cookiecutter.library_prefix|lower }}_{%- endif -%}{{- cookiecutter.library_name|lower -}}"],
+    py_modules=["{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | lower | replace(" ", "_") }}_{% endif %}{{ cookiecutter.library_name | lower | replace(" ", "_") }}"],
 )
