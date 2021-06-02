@@ -14,9 +14,9 @@ Introduction
 {% if cookiecutter.sphinx_docs | lower in ["yes", "y"] %}
 .. image:: https://readthedocs.org/projects/{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | lower | replace("_", "-")}}-{% endif %}circuitpython-{{ cookiecutter.library_name | lower | replace(" ", "-") }}/badge/?version=latest
 {%- if cookiecutter.target_bundle == 'Adafruit' %}
-    :target: https://circuitpython.readthedocs.io/projects/{{ cookiecutter.library_name | lower }}/en/latest/
+    :target: https://circuitpython.readthedocs.io/projects/{{ cookiecutter.library_name | lower | replace(" ", "-") }}/en/latest/
 {%- else %}
-    :target: https://circuitpython-{{ cookiecutter.library_name | lower }}.readthedocs.io/
+    :target: https://circuitpython-{{ cookiecutter.library_name | lower | replace(" ", "-") }}.readthedocs.io/
 {%- endif %}
     :alt: Documentation Status
 {% endif %}
