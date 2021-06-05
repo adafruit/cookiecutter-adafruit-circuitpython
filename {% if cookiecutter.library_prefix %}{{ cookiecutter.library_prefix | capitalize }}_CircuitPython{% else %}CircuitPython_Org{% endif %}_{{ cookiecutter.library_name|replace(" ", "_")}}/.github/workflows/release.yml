@@ -82,4 +82,18 @@ jobs:
         TWINE_PASSWORD: ${{ secrets.pypi_password }}
       run: |
         python setup.py sdist
+        # After the dist file is packaged, extract it, update the __version__
+        # lines and repackage it.
+        cd dist
+        ZIP_FILE=`ls | sed -e "s/\.tar\.gz$//"`
+        echo "ZIP FILE = ${ZIP_FILE}"
+        tar xzf "${ZIP_FILE}.tar.gz"
+        echo The latest release version is \"${{github.event.release.tag_name}}\".
+        # Don't descend into ./.env, ./.eggs, or ./docs
+        for file in $(find -not -path "./.*" -not -path "./docs*" -name "*.py"); do
+            sed -i -e "s/0.0.0-auto.0/${{github.event.release.tag_name}}/" $file;
+        done;
+        tar czf "${ZIP_FILE}.tar.gz" "${ZIP_FILE}"
+        rm -rf "${ZIP_FILE}"
+        cd ..
         twine upload dist/*
