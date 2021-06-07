@@ -82,8 +82,7 @@ In any situation, you may send an email to <support@adafruit.com>.
 On the Adafruit Discord, you may send an open message from any channel
 to all Community Moderators by tagging @community moderators. You may
 also send an open message from any channel, or a direct message to
-@kattni#1507, @tannewt#4653, @danh#1614, @cater#2442,
-@sommersoft#0222, @Mr. Certainly#0472 or @Andon#8175.
+any Community Moderator.
 
 Email and direct message reports will be kept confidential.
 
@@ -94,18 +93,18 @@ you should also report the message directly to Discord.
 These are the steps for upholding our community’s standards of conduct.
 
 1. Any member of the community may report any situation that violates the
-Adafruit Community Code of Conduct. All reports will be reviewed and
-investigated.
+   Adafruit Community Code of Conduct. All reports will be reviewed and
+   investigated.
 2. If the behavior is an egregious violation, the community member who
-committed the violation may be banned immediately, without warning.
+   committed the violation may be banned immediately, without warning.
 3. Otherwise, moderators will first respond to such behavior with a warning.
 4. Moderators follow a soft "three strikes" policy - the community member may
-be given another chance, if they are receptive to the warning and change their
-behavior.
+   be given another chance, if they are receptive to the warning and change their
+   behavior.
 5. If the community member is unreceptive or unreasonable when warned by a
-moderator, or the warning goes unheeded, they may be banned for a first or
-second offense. Repeated offenses will result in the community member being
-banned.
+   moderator, or the warning goes unheeded, they may be banned for a first or
+   second offense. Repeated offenses will result in the community member being
+   banned.
 
 ## Scope
 
@@ -123,7 +122,7 @@ accordingly.
 
 ## Attribution
 
-This Code of Conduct is adapted from the [Contributor Covenant],
+This Code of Conduct is adapted from the [Contributor Covenant][homepage],
 version 1.4, available at
 <https://www.contributor-covenant.org/version/1/4/code-of-conduct.html>,
 and the [Rust Code of Conduct](https://www.rust-lang.org/en-US/conduct.html).
@@ -133,5 +132,3 @@ Conduct, please contact the maintainers of those projects for enforcement.
 If you wish to use this code of conduct for your own project, consider
 explicitly mentioning your moderation policy or making a copy with your
 own moderation policy so as to avoid confusion.
-
-[Contributor Covenant]: https://www.contributor-covenant.org
