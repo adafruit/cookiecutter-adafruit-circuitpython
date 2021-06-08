@@ -52,8 +52,15 @@ with open(path.join(here, "README.rst"), encoding="utf-8") as f:
 setup(
     {% if cookiecutter.target_bundle == 'Adafruit' -%}
     # Adafruit Bundle Information
+    {%- else -%}
+    # Community Bundle Information
+    {%- endif %}
     name="{{ pypi_name }}",
-    use_scm_version=True,
+    use_scm_version={
+        # This is needed for the PyPI version munging in the Github Actions release.yml
+        "git_describe_command": "git describe --tags --long",
+        "local_scheme": "no-local-version",
+    },
     setup_requires=["setuptools_scm"],
     description="{{ cookiecutter.library_description }}",
     long_description=long_description,
@@ -61,21 +68,12 @@ setup(
     # The project's main homepage.
     url="https://github.com/{{ cookiecutter.github_user }}/{{ repo_name }}.git",
     # Author details
+    {% if cookiecutter.target_bundle == 'Adafruit' -%}
     author="Adafruit Industries",
     author_email="circuitpython@adafruit.com",
     {%- else -%}
-    # Community Bundle Information
-    name="{{ pypi_name }}",
-    use_scm_version=True,
-    setup_requires=["setuptools_scm"],
-    description="{{ cookiecutter.library_description }}",
-    long_description=long_description,
-    long_description_content_type="text/x-rst",
-    # The project's main homepage.
-    url="https://github.com/{{ cookiecutter.github_user }}/{{ repo_name }}.git",
-    # Author details
     author="{{ cookiecutter.author_name }}",
-    author_email="",
+    author_email="",  # TODO: Add your email here
     {%- endif %}
     install_requires=[
         "{{ req_list.items|sort|unique|join('",\n"')|indent(width=8) }}",
@@ -95,6 +93,7 @@ setup(
     ],
     # What does your project relate to?
     keywords="{{ kw_list.kw_list|sort|unique|join(' "\n"')|indent(width=13) }}",
+
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
     # TODO: IF LIBRARY FILES ARE A PACKAGE FOLDER,
