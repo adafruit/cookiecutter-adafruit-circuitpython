@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 import json
+import os
 import pathlib
 import shutil
 import sys
@@ -44,7 +45,7 @@ def compare_template_dirs(*, library_name='test', library_prefix=None):
                                          `library_prefix` prompt. Default: None
     """
 
-    cookie_template_path = working_dir / '{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize }}_CircuitPython{% else %}CircuitPython_Org{% endif %}_{{ cookiecutter.library_name|replace(" ", "_")}}'
+    cookie_template_path = working_dir / "{{ cookiecutter and 'tmp_repo' }}"
     if library_prefix:
         generated_folder_name = "{}_CircuitPython_{}".format(library_prefix, library_name)
     else:
@@ -99,7 +100,7 @@ def test_new_cookiecutter_only_required_entries():
         extra_context=test_context
     )
 
-    assert new_cookie == '{}/Adafruit_CircuitPython_test'.format(output_dir.resolve())
+    assert os.listdir(output_dir)[0] == 'Adafruit_CircuitPython_test'
     assert compare_template_dirs(library_prefix="Adafruit")
 
 def test_new_cookiecutter_all_entries():
@@ -131,5 +132,5 @@ def test_new_cookiecutter_all_entries():
         extra_context=test_context
     )
 
-    assert new_cookie == '{}/Test_CircuitPython_test'.format(output_dir.resolve())
+    assert os.listdir(output_dir)[0] == 'Test_CircuitPython_test'
     assert compare_template_dirs(library_prefix='Test')
