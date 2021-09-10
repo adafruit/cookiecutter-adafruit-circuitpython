@@ -1,12 +1,15 @@
-{%- if cookiecutter.library_prefix -%}
-    {%- set repo_name = (cookiecutter.library_prefix | capitalize) -%}
-    {%- set repo_name = repo_name + '_CircuitPython_' -%}
+{%- if cookiecutter.target_bundle != 'CircuitPython Org' -%}
+    {%- if cookiecutter.library_prefix -%}
+        {%- set repo_name = (cookiecutter.library_prefix | capitalize) -%}
+        {%- set repo_name = repo_name + '_CircuitPython_' -%}
+    {%- else -%}
+        {%- set repo_name = 'CircuitPython_' -%}
+    {%- endif -%}
     {%- set repo_name = repo_name + cookiecutter.library_name | replace(" ", "_") -%}
 {%- else -%}
     {%- set repo_name = 'CircuitPython_Org_' + cookiecutter.library_name | replace(" ", "_") -%}
 {%- endif -%}
-
-{% set full_repo_name = cookiecutter.github_user + "/" + repo_name -%}
+{%- set full_repo_name = cookiecutter.github_user + "/" + repo_name -%}
 {%- set pypi_name = cookiecutter.library_name|lower|replace("_", "-")|replace(" ", "-") -%}
 Introduction
 ============
