@@ -22,10 +22,15 @@
 {%- set wrapped = kw_list.default|unique|join(" ")|wordwrap(break_long_words=False) -%}
 {%- do kw_list.kw_list.extend(wrapped.split("\n")) -%}
 {# create repo and pypi names #}
-{%- if cookiecutter.library_prefix -%}
-    {%- set repo_name = (cookiecutter.library_prefix | capitalize) -%}
-    {%- set repo_name = repo_name + '_CircuitPython_' -%}
-    {%- set repo_name = repo_name + cookiecutter.library_name | replace(" ", "_") -%}
+{%- if cookiecutter.target_bundle != 'CircuitPython Org' -%}
+    {%- if cookiecutter.library_prefix -%}
+        {%- set repo_name = (cookiecutter.library_prefix | capitalize) -%}
+        {%- set repo_name = repo_name + '_CircuitPython_' -%}
+        {%- set repo_name = repo_name + cookiecutter.library_name | replace(" ", "_") -%}
+    {%- else -%}
+        {%- set repo_name = 'CircuitPython_' -%}
+        {%- set repo_name = repo_name + cookiecutter.library_name | replace(" ", "_") -%}
+    {%- endif -%}
 {%- else -%}
     {%- set repo_name = 'CircuitPython_Org_' + cookiecutter.library_name | replace(" ", "_") -%}
 {%- endif -%}
@@ -50,8 +55,7 @@ with open(path.join(here, "README.rst"), encoding="utf-8") as f:
     long_description = f.read()
 
 setup(
-    {% if cookiecutter.target_bundle == 'Adafruit' -%}
-    # Adafruit Bundle Information
+    # {{ cookiecutter.target_bundle }} Bundle Information
     name="{{ pypi_name }}",
     use_scm_version=True,
     setup_requires=["setuptools_scm"],
@@ -61,19 +65,10 @@ setup(
     # The project's main homepage.
     url="https://github.com/{{ cookiecutter.github_user }}/{{ repo_name }}.git",
     # Author details
+    {% if cookiecutter.target_bundle == 'Adafruit' -%}
     author="Adafruit Industries",
     author_email="circuitpython@adafruit.com",
     {%- else -%}
-    # Community Bundle Information
-    name="{{ pypi_name }}",
-    use_scm_version=True,
-    setup_requires=["setuptools_scm"],
-    description="{{ cookiecutter.library_description }}",
-    long_description=long_description,
-    long_description_content_type="text/x-rst",
-    # The project's main homepage.
-    url="https://github.com/{{ cookiecutter.github_user }}/{{ repo_name }}.git",
-    # Author details
     author="{{ cookiecutter.author_name }}",
     author_email="",
     {%- endif %}

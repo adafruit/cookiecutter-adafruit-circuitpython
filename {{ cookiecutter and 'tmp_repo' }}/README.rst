@@ -15,11 +15,11 @@ Introduction
 ============
 
 {% if cookiecutter.sphinx_docs | lower in ["yes", "y"] %}
-.. image:: https://readthedocs.org/projects/{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | lower | replace("_", "-")}}-{% endif %}circuitpython-{{ cookiecutter.library_name | lower | replace(" ", "-") }}/badge/?version=latest
+.. image:: https://readthedocs.org/projects/{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | lower | replace("_", "-")}}-{% endif %}circuitpython-{{ cookiecutter.library_name | lower | replace(" ", "-") | replace("_", "-") }}/badge/?version=latest
 {%- if cookiecutter.target_bundle == 'Adafruit' %}
     :target: https://circuitpython.readthedocs.io/projects/{{ cookiecutter.library_name | lower | replace(" ", "-") }}/en/latest/
 {%- else %}
-    :target: https://circuitpython-{{ cookiecutter.library_name | lower | replace(" ", "-") }}.readthedocs.io/
+    :target: https://circuitpython-{{ cookiecutter.library_name | lower | replace(" ", "-") | replace("_", "-") }}.readthedocs.io/
 {%- endif %}
     :alt: Documentation Status
 {% endif %}
@@ -80,7 +80,7 @@ Installing from PyPI
 .. todo:: Remove the above note if PyPI version is/will be available at time of release.
 
 On supported GNU/Linux systems like the Raspberry Pi, you can install the driver locally `from
-PyPI <https://pypi.org/project/{%- if cookiecutter.library_prefix -%}{{ cookiecutter.library_prefix }}-{%- endif -%}circuitpython-{{ cookiecutter.library_name|lower|replace(" ", "-") }}/>`_.
+PyPI <https://pypi.org/project/{%- if cookiecutter.library_prefix -%}{{ cookiecutter.library_prefix }}-{%- endif -%}circuitpython-{{ pypi_name }}/>`_.
 To install for current user:
 
 .. code-block:: shell
