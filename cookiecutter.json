@@ -1,11 +1,12 @@
 {
     "target_bundle": [
         "Adafruit",
-        "Community"
+        "Community",
+        "CircuitPython Org"
     ],
-    "github_user": "{%- if cookiecutter.target_bundle == 'Adafruit' -%} adafruit {%- endif -%}",
+    "github_user": "{%- if cookiecutter.target_bundle == 'Adafruit' -%} adafruit {%- elif cookiecutter.target_bundle == 'CircuitPython Org' -%} circuitpython {%- endif -%}",
     "author_name": null,
-    "company": "{%- if cookiecutter.target_bundle == 'Adafruit' -%} Adafruit Industries {%- endif -%}",
+    "company": "{%- if cookiecutter.target_bundle == 'Adafruit' -%} Adafruit Industries {%- elif cookiecutter.target_bundle == 'CircuitPython Org' -%} CircuitPython Organization{%- endif -%}",
     "library_name": null,
     "library_description": "",
     "library_keywords": "",
@@ -14,8 +15,8 @@
     "requires_bus_device": "",
     "requires_register": "",
     "other_requirements": "",
-    "pypi_release": "{%- if cookiecutter.target_bundle == 'Adafruit' -%} yes {%- else -%} no {%- endif -%}",
-    "sphinx_docs":  "{%- if cookiecutter.target_bundle == 'Adafruit' -%} yes {%- else -%} no {%- endif -%}",
+    "pypi_release": "{%- if cookiecutter.target_bundle == 'Adafruit' or cookiecutter.target_bundle == 'CircuitPython Org' -%} yes {%- else -%} no {%- endif -%}",
+    "sphinx_docs":  "{%- if cookiecutter.target_bundle == 'Adafruit' or cookiecutter.target_bundle == 'CircuitPython Org' -%} yes {%- else -%} no {%- endif -%}",
     "_extensions": ["jinja2.ext.do"],
     "_copy_without_render": ["*.github/*"]
 }

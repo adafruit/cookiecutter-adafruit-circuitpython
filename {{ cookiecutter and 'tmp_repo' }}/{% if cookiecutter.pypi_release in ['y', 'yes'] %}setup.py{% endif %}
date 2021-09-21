@@ -22,10 +22,15 @@
 {%- set wrapped = kw_list.default|unique|join(" ")|wordwrap(break_long_words=False) -%}
 {%- do kw_list.kw_list.extend(wrapped.split("\n")) -%}
 {# create repo and pypi names #}
-{%- if cookiecutter.library_prefix -%}
-    {%- set repo_name = (cookiecutter.library_prefix | capitalize) -%}
-    {%- set repo_name = repo_name + '_CircuitPython_' -%}
-    {%- set repo_name = repo_name + cookiecutter.library_name | replace(" ", "_") -%}
+{%- if cookiecutter.target_bundle != 'CircuitPython Org' -%}
+    {%- if cookiecutter.library_prefix -%}
+        {%- set repo_name = (cookiecutter.library_prefix | capitalize) -%}
+        {%- set repo_name = repo_name + '_CircuitPython_' -%}
+        {%- set repo_name = repo_name + cookiecutter.library_name | replace(" ", "_") -%}
+    {%- else -%}
+        {%- set repo_name = 'CircuitPython_' -%}
+        {%- set repo_name = repo_name + cookiecutter.library_name | replace(" ", "_") -%}
+    {%- endif -%}
 {%- else -%}
     {%- set repo_name = 'CircuitPython_Org_' + cookiecutter.library_name | replace(" ", "_") -%}
 {%- endif -%}
@@ -50,11 +55,7 @@ with open(path.join(here, "README.rst"), encoding="utf-8") as f:
     long_description = f.read()
 
 setup(
-    {% if cookiecutter.target_bundle == 'Adafruit' -%}
-    # Adafruit Bundle Information
-    {%- else -%}
-    # Community Bundle Information
-    {%- endif %}
+    # {{ cookiecutter.target_bundle }} Bundle Information
     name="{{ pypi_name }}",
     use_scm_version={
         # This is needed for the PyPI version munging in the Github Actions release.yml

@@ -51,7 +51,7 @@ source_suffix = ".rst"
 master_doc = "index"
 
 # General information about the project.
-project = "{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize }} {% endif %}CircuitPython {{ cookiecutter.library_name }} Library"
+project = "{% if cookiecutter.target_bundle != 'CircuitPython Org' %}{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize }} {% endif %}{% endif %}CircuitPython {{ cookiecutter.library_name }} Library"
 copyright = "{% now 'utc', '%Y' %} {{ cookiecutter.author_name }}"
 author = "{{ cookiecutter.author_name }}"
 
