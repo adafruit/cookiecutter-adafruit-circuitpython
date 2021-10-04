@@ -11,7 +11,7 @@
     "library_description": "",
     "library_keywords": "",
     "library_prefix": "{%- if cookiecutter.target_bundle == 'Adafruit' -%} adafruit {%- endif -%}",
-    "adafruit_project_id": "",
+    "adafruit_product_id": "",
     "requires_bus_device": "",
     "requires_register": "",
     "other_requirements": "",
