@@ -37,7 +37,7 @@ Prompts
 * ``library_description`` - Write a sentence describing the purpose of this library (e.g. ``CircuitPython helper library for the DC & Stepper Motor FeatherWing, Shield and Pi Hat kits.``).
 * ``library_keywords`` - Used to populate keywords for PyPi. Enter a string of keywords (e.g ``dht temp humidity``) NOTE: The following are included by default: ``adafruit``, ``blinka``, ``circuitpython``, ``micropython``, and the ``library_name`` you enter.
 * ``library_prefix`` - Used to prefix the code to the organization creating the library. For example, Adafruit supported libraries should say "adafruit" here. Do not add a - or _.
-* ``adafruit_pid`` -  The product ID for the Adafruit product includes a link to the product in the README. Only applies to Adafruit Bundle.
+* ``adafruit_product_id`` -  The product ID for the Adafruit product includes a link to the product in the README. Only applies to Adafruit Bundle.
 * ``requires_bus_device`` - Determines whether to add comments about a dependency on `BusDevice <https://github.com/adafruit/Adafruit_CircuitPython_BusDevice>`_.
   If the library uses BusDevice, enter ``y`` or ``yes`` to include. If the library doesn't use BusDevice, all other entries including empty, will not include BusDevice.
 * ``requires_register`` - Determines whether to add comments about a dependency on `Register <https://github.com/adafruit/Adafruit_CircuitPython_Register>`_.
