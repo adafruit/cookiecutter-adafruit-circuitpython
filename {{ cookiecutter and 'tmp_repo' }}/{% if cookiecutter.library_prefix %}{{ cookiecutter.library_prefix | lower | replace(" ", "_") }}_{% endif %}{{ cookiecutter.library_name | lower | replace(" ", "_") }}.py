@@ -36,7 +36,7 @@ Implementation Notes
 
 # imports
 
-{%- if cookiecutter.target_bundle != 'CircuitPython Org' -%}
+{% if cookiecutter.target_bundle != 'CircuitPython Org' -%}
     {%- if cookiecutter.library_prefix -%}
         {%- set repo_name = (cookiecutter.library_prefix | capitalize) -%}
         {%- set repo_name = repo_name + '_CircuitPython_' -%}
@@ -45,9 +45,9 @@ Implementation Notes
         {%- set repo_name = 'CircuitPython_' -%}
         {%- set repo_name = repo_name + cookiecutter.library_name | replace(" ", "_") -%}
     {%- endif -%}
-{%- else -%}
+{% else -%}
     {%- set repo_name = 'CircuitPython_Org_' + cookiecutter.library_name | replace(" ", "_") -%}
-{%- endif -%}
+{% endif -%}
 
 __version__ = "0.0.0-auto.0"
 __repo__ = "https://github.com/{{ cookiecutter.github_user }}/{{ repo_name }}.git"
