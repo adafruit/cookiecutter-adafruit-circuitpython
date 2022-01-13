@@ -31,12 +31,12 @@ extensions = [
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
     {%- if cookiecutter.requires_bus_device in ["y", "yes"] -%}
-    "BusDevice": ("https://circuitpython.readthedocs.io/projects/busdevice/en/latest/", None),
+    "BusDevice": ("https://docs.circuitpython.org/projects/busdevice/en/latest/", None),
     {% endif %}
     {%- if cookiecutter.requires_register in ["y", "yes"] -%}
-    "Register": ("https://circuitpython.readthedocs.io/projects/register/en/latest/", None),
+    "Register": ("https://docs.circuitpython.org/projects/register/en/latest/", None),
     {%- endif %}
-    "CircuitPython": ("https://circuitpython.readthedocs.io/en/latest/", None),
+    "CircuitPython": ("https://docs.circuitpython.org/en/latest/", None),
 }
 
 # Show the docstring from both the class and its __init__() method.

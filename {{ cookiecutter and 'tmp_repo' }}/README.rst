@@ -17,7 +17,7 @@ Introduction
 {% if cookiecutter.sphinx_docs | lower in ["yes", "y"] %}
 .. image:: https://readthedocs.org/projects/{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | lower | replace("_", "-")}}-{% endif %}circuitpython-{{ cookiecutter.library_name | lower | replace(" ", "-") | replace("_", "-") }}/badge/?version=latest
 {%- if cookiecutter.target_bundle == 'Adafruit' %}
-    :target: https://circuitpython.readthedocs.io/projects/{{ cookiecutter.library_name | lower | replace(" ", "-") }}/en/latest/
+    :target: https://docs.circuitpython.org/projects/{{ cookiecutter.library_name | lower | replace(" ", "-") }}/en/latest/
 {%- else %}
     :target: https://circuitpython-{{ cookiecutter.library_name | lower | replace(" ", "-") | replace("_", "-") }}.readthedocs.io/
 {%- endif %}
