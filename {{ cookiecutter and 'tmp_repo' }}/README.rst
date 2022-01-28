@@ -11,15 +11,21 @@
 {%- endif -%}
 {%- set full_repo_name = cookiecutter.github_user + "/" + repo_name -%}
 {%- set pypi_name = cookiecutter.library_name|lower|replace("_", "-")|replace(" ", "-") -%}
+{%- if cookiecutter.target_bundle == 'Adafruit' %}
+    {%- set docs_url = 'https://docs.circuitpython.org/projects/' + cookiecutter.library_name | lower | replace(" ", "-") + '/en/latest/' -%}
+{%- else %}
+    {%- set docs_url = 'https://circuitpython-' + cookiecutter.library_name | lower | replace(" ", "-") | replace("_", "-") + '.readthedocs.io/' -%}
+{%- endif %}
+
 Introduction
 ============
 
 {% if cookiecutter.sphinx_docs | lower in ["yes", "y"] %}
 .. image:: https://readthedocs.org/projects/{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | lower | replace("_", "-")}}-{% endif %}circuitpython-{{ cookiecutter.library_name | lower | replace(" ", "-") | replace("_", "-") }}/badge/?version=latest
 {%- if cookiecutter.target_bundle == 'Adafruit' %}
-    :target: https://docs.circuitpython.org/projects/{{ cookiecutter.library_name | lower | replace(" ", "-") }}/en/latest/
+    :target: {{ docs_url }}
 {%- else %}
-    :target: https://circuitpython-{{ cookiecutter.library_name | lower | replace(" ", "-") | replace("_", "-") }}.readthedocs.io/
+    :target: {{ docs_url }}
 {%- endif %}
     :alt: Documentation Status
 {% endif %}
@@ -142,6 +148,7 @@ before contributing to help this project stay welcoming.
 
 Documentation
 =============
+API documentation for this library can be found on `Read the Docs <{{ docs_url }}>`_.
 
 For information on building library documentation, please check out
 `this guide <https://learn.adafruit.com/creating-and-sharing-a-circuitpython-library/sharing-our-docs-on-readthedocs#sphinx-5-1>`_.
