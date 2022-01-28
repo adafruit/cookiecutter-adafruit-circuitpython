@@ -11,12 +11,11 @@
 {%- endif -%}
 {%- set full_repo_name = cookiecutter.github_user + "/" + repo_name -%}
 {%- set pypi_name = cookiecutter.library_name|lower|replace("_", "-")|replace(" ", "-") -%}
-{%- if cookiecutter.target_bundle == 'Adafruit' %}
+{%- if cookiecutter.target_bundle == 'Adafruit' -%}
     {%- set docs_url = 'https://docs.circuitpython.org/projects/' + cookiecutter.library_name | lower | replace(" ", "-") + '/en/latest/' -%}
-{%- else %}
+{%- else -%}
     {%- set docs_url = 'https://circuitpython-' + cookiecutter.library_name | lower | replace(" ", "-") | replace("_", "-") + '.readthedocs.io/' -%}
-{%- endif %}
-
+{%- endif -%}
 Introduction
 ============
 
