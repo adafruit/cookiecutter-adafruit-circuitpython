@@ -25,7 +25,7 @@ Implementation Notes
 **Software and Dependencies:**
 
 * Adafruit CircuitPython firmware for the supported boards:
-  https://github.com/adafruit/circuitpython/releases
+  https://circuitpython.org/downloads
 
 .. todo:: Uncomment or remove the Bus Device and/or the Register library dependencies
   based on the library's use of either.
