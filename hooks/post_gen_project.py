@@ -10,7 +10,7 @@ import shutil
 import sys
 
 
-base_folder = pathlib.PosixPath().resolve()
+base_folder = pathlib.Path().resolve()
 docs_dir = base_folder / "docs"
 sphinx_docs = "{{cookiecutter.sphinx_docs}}"
 

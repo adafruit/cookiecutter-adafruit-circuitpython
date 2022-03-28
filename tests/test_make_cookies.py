@@ -11,10 +11,6 @@ import sys
 from cookiecutter.main import cookiecutter
 
 
-# only verified on linux and MacOS
-if not (sys.platform.startswith('linux') or sys.platform.startswith('darwin')):
-    raise RuntimeError('These tests are only verified to run on Linux and MacOS systems.')
-
 working_dir = pathlib.Path()
 output_dir = working_dir / '.cookie_test'
 
