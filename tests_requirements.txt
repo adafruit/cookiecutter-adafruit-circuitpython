@@ -2,5 +2,5 @@
 #
 # SPDX-License-Identifier: Unlicense
 
-cookiecutter
+ansys-cookiecutter
 pytest
