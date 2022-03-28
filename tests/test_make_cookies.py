@@ -45,7 +45,7 @@ def compare_template_dirs(*, library_name='test', library_prefix=None):
                                          `library_prefix` prompt. Default: None
     """
 
-    cookie_template_path = working_dir / "{{ cookiecutter and 'tmp_repo' }}"
+    cookie_template_path = working_dir / "{{ cookiecutter.__dirname }}"
     if library_prefix:
         generated_folder_name = "{}_CircuitPython_{}".format(library_prefix, library_name)
     else:
