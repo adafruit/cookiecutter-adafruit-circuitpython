@@ -2,7 +2,8 @@
     "target_bundle": [
         "Adafruit",
         "Community",
-        "CircuitPython Org"
+        "CircuitPython Org",
+        "test"
     ],
     "github_user": "{%- if cookiecutter.target_bundle == 'Adafruit' -%} adafruit {%- elif cookiecutter.target_bundle == 'CircuitPython Org' -%} circuitpython {%- endif -%}",
     "author_name": null,
