@@ -12,13 +12,15 @@
 
 # If you find that there are files being generated on your machine that should not be included in
 # your git commit, you should create a .gitignore_global file on your computer to include the
-# files created by your personal setup.
+# files created by your personal setup. To do so, follow the two steps below.
+
 # First, create a file called .gitignore_global somewhere convenient for you, and add rules for
 # the files you want to exclude from git commits.
+
 # Second, configure Git to use the exclude file for all Git repositories by running the
-# following via commandline, replacing "path_to_your" with the actual path to your newly created
+# following via commandline, replacing "path/to/your/" with the actual path to your newly created
 # .gitignore_global file:
-# git config --global core.excludesfile path_to_your/.gitignore_global
+# git config --global core.excludesfile path/to/your/.gitignore_global
 
 # CircuitPython-specific files
 *.mpy
@@ -31,7 +33,7 @@ __pycache__
 _build
 
 # This file results from running `pip -e install .` in a local repository
-*.egg-info
+**/*.egg-info
 
 # Virtual environment-specific files
 .env
