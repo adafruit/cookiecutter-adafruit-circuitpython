@@ -33,7 +33,7 @@ __pycache__
 _build
 
 # This file results from running `pip -e install .` in a local repository
-**/*.egg-info
+*.egg-info
 
 # Virtual environment-specific files
 .env
@@ -44,3 +44,4 @@ _build
 # IDE-specific files
 .idea
 .vscode
+*~
