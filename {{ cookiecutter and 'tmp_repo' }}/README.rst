@@ -29,7 +29,11 @@ Introduction
     :alt: Documentation Status
 {% endif %}
 
+{%- if cookiecutter.target_bundle == 'Adafruit' %}
+.. image:: https://github.com/adafruit/Adafruit_CircuitPython_Bundle/blob/main/badges/adafruit_discord.svg
+{%- else %}
 .. image:: https://img.shields.io/discord/327254708534116352.svg
+{% endif %}
     :target: https://adafru.it/discord
     :alt: Discord
 
