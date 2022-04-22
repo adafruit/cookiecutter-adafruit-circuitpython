@@ -1,16 +1,31 @@
-# SPDX-FileCopyrightText: 2017 Scott Shawcroft, written for Adafruit Industries
+# SPDX-FileCopyrightText: 2022 Kattni Rembor, written for Adafruit Industries
 #
-# SPDX-License-Identifier: Unlicense
+# SPDX-License-Identifier: MIT
 
-.venv
-.env
-.python-version
+# cookiecutter-specific files
+.cookie_test/
+.pytest*
 
+# CircuitPython-specific files
+*.mpy
+
+# Python-specific files
+__pycache__
 *.pyc
 
-.pytest*
-__pycache__
+# Sphinx build-specific files
+_build
 
-.cookie_test/
+# This file results from running `pip -e install .` in a local repository
+*.egg-info
 
-.vscode/
+# Virtual environment-specific files
+.env
+
+# MacOS-specific files
+*.DS_Store
+
+# IDE-specific files
+.idea
+.vscode
+*~
