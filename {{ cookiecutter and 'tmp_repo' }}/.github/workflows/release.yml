@@ -44,7 +44,7 @@ jobs:
       run: |
         source actions-ci/install.sh
     - name: Build assets
-      run: circuitpython-build-bundles --filename_prefix ${{ steps.repo-name.outputs.repo-name }} --library_location .
+      run: circuitpython-build-bundles --filename_prefix ${{ steps.repo-name.outputs.repo-name }}{% if cookiecutter.target_bundle == 'Community' %}{{ --package_folder_prefix "{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | lower | replace(' ', '_') }}_{% endif %}"}}{% endif %} --library_location .
     - name: Upload Release Assets
       # the 'official' actions version does not yet support dynamically
       # supplying asset names to upload. @csexton's version chosen based on
