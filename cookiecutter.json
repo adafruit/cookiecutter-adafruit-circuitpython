@@ -17,6 +17,5 @@
     "other_requirements": "",
     "pypi_release": "{%- if cookiecutter.target_bundle == 'Adafruit' or cookiecutter.target_bundle == 'CircuitPython Org' -%} yes {%- else -%} no {%- endif -%}",
     "sphinx_docs":  "{%- if cookiecutter.target_bundle == 'Adafruit' or cookiecutter.target_bundle == 'CircuitPython Org' -%} yes {%- else -%} no {%- endif -%}",
-    "_extensions": ["jinja2.ext.do"],
-    "_copy_without_render": ["*.github/*"]
+    "_extensions": ["jinja2.ext.do"]
 }
