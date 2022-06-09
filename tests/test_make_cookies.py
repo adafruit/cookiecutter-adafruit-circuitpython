@@ -121,8 +121,6 @@ def test_new_cookiecutter_all_entries():
                 test_context[key] = 'yes'
             else:
                 test_context[key] = 'test'
-        else:
-            test_context[key] = value
 
     new_cookie = cookiecutter(
         str(working_dir.resolve()),
