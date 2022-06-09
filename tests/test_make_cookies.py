@@ -89,8 +89,6 @@ def test_new_cookiecutter_only_required_entries():
     for key, value in cookie_json.items():
         if value == None:
             test_context[key] = 'test'
-        if key.startswith('_'):
-            test_context[key] = value
 
     new_cookie = cookiecutter(
         str(working_dir.resolve()),
