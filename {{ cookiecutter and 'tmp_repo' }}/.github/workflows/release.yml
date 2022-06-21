@@ -14,7 +14,7 @@ jobs:
     steps:
     - name: Dump GitHub context
       env:
-        {% raw %}GITHUB_CONTEXT: ${{ toJson(github) }}{% endraw %}
+        GITHUB_CONTEXT: {% raw %}${{ toJson(github) }}{% endraw %}
       run: echo "$GITHUB_CONTEXT"
     - name: Translate Repo Name For Build Tools filename_prefix
       id: repo-name
@@ -55,7 +55,7 @@ jobs:
       uses: csexton/release-asset-action@master
       with:
         pattern: "bundles/*"
-        {% raw %}github-token: ${{ secrets.GITHUB_TOKEN }} {% endraw %}
+        github-token: {% raw %}${{ secrets.GITHUB_TOKEN }} {% endraw %}
 
   upload-pypi:
     runs-on: ubuntu-latest
@@ -78,8 +78,8 @@ jobs:
     - name: Build and publish
       if: contains(steps.need-pypi.outputs.setup-py, 'setup.py')
       env:
-        {% raw %}TWINE_USERNAME: ${{ secrets.pypi_username }}{% endraw %}
-        {% raw %}TWINE_PASSWORD: ${{ secrets.pypi_password }}{% endraw %}
+        TWINE_USERNAME: {% raw %}${{ secrets.pypi_username }}{% endraw %}
+        TWINE_PASSWORD: {% raw %}${{ secrets.pypi_password }}{% endraw %}
       run: |
         for file in $(find -not -path "./.*" -not -path "./docs*" -name "*.py"); do
             {% raw %}sed -i -e "s/0.0.0-auto.0/${{github.event.release.tag_name}}/" $file;{% endraw %}
