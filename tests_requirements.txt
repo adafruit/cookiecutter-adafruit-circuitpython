@@ -3,4 +3,5 @@
 # SPDX-License-Identifier: Unlicense
 
 cookiecutter >= 2.1.0
+chardet < 5 # for compatibility with requests
 pytest
