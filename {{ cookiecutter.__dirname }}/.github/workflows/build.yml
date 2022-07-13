@@ -12,13 +12,13 @@ jobs:
     steps:
     - name: Dump GitHub context
       env:
-        GITHUB_CONTEXT: ${{ toJson(github) }}
+        GITHUB_CONTEXT: {% raw %}${{ toJson(github) }}{% endraw %}
       run: echo "$GITHUB_CONTEXT"
     - name: Translate Repo Name For Build Tools filename_prefix
       id: repo-name
       run: |
         echo ::set-output name=repo-name::$(
-        echo ${{ github.repository }} |
+        {% raw %}echo ${{ github.repository }} |{% endraw %}
         awk -F '\/' '{ print tolower($2) }' |
         tr '_' '-'
         )
@@ -53,12 +53,12 @@ jobs:
       run: |
         pre-commit run --all-files
     - name: Build assets
-      run: circuitpython-build-bundles --filename_prefix ${{ steps.repo-name.outputs.repo-name }} --library_location .
+      run: circuitpython-build-bundles --filename_prefix {% raw %}${{ steps.repo-name.outputs.repo-name }}{% endraw -%} {% if cookiecutter.target_bundle == 'Community' %} --package_folder_prefix {% if cookiecutter.library_prefix -%} {{ cookiecutter.library_prefix | lower | replace(' ', '_') }}_ {%- else %}""{%- endif -%}{%- endif %} --library_location .
     - name: Archive bundles
       uses: actions/upload-artifact@v2
       with:
         name: bundles
-        path: ${{ github.workspace }}/bundles/
+        {% raw %}path: ${{ github.workspace }}/bundles/{% endraw %}
     - name: Check for docs folder
       id: need-docs
       run: |

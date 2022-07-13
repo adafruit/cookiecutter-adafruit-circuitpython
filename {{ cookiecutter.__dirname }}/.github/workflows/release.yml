@@ -14,13 +14,13 @@ jobs:
     steps:
     - name: Dump GitHub context
       env:
-        GITHUB_CONTEXT: ${{ toJson(github) }}
+        GITHUB_CONTEXT: {% raw %}${{ toJson(github) }}{% endraw %}
       run: echo "$GITHUB_CONTEXT"
     - name: Translate Repo Name For Build Tools filename_prefix
       id: repo-name
       run: |
         echo ::set-output name=repo-name::$(
-        echo ${{ github.repository }} |
+        {% raw %}echo ${{ github.repository }} |{% endraw %}
         awk -F '\/' '{ print tolower($2) }' |
         tr '_' '-'
         )
@@ -44,7 +44,7 @@ jobs:
       run: |
         source actions-ci/install.sh
     - name: Build assets
-      run: circuitpython-build-bundles --filename_prefix ${{ steps.repo-name.outputs.repo-name }} --library_location .
+      run: circuitpython-build-bundles --filename_prefix {% raw %}${{ steps.repo-name.outputs.repo-name }}{% endraw -%} {% if cookiecutter.target_bundle == 'Community' %} --package_folder_prefix {% if cookiecutter.library_prefix -%} {{ cookiecutter.library_prefix | lower | replace(' ', '_') }}_ {%- else %}""{%- endif -%}{%- endif %} --library_location .
     - name: Upload Release Assets
       # the 'official' actions version does not yet support dynamically
       # supplying asset names to upload. @csexton's version chosen based on
@@ -55,7 +55,7 @@ jobs:
       uses: csexton/release-asset-action@master
       with:
         pattern: "bundles/*"
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+        github-token: {% raw %}${{ secrets.GITHUB_TOKEN }} {% endraw %}
 
   upload-pypi:
     runs-on: ubuntu-latest
@@ -78,11 +78,11 @@ jobs:
     - name: Build and publish
       if: contains(steps.need-pypi.outputs.setup-py, 'setup.py')
       env:
-        TWINE_USERNAME: ${{ secrets.pypi_username }}
-        TWINE_PASSWORD: ${{ secrets.pypi_password }}
+        TWINE_USERNAME: {% raw %}${{ secrets.pypi_username }}{% endraw %}
+        TWINE_PASSWORD: {% raw %}${{ secrets.pypi_password }}{% endraw %}
       run: |
         for file in $(find -not -path "./.*" -not -path "./docs*" -name "*.py"); do
-            sed -i -e "s/0.0.0-auto.0/${{github.event.release.tag_name}}/" $file;
+            {% raw %}sed -i -e "s/0.0.0-auto.0/${{github.event.release.tag_name}}/" $file;{% endraw %}
         done;
         python setup.py sdist
         twine upload dist/*
