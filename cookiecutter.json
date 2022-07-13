@@ -2,7 +2,8 @@
     "target_bundle": [
         "Adafruit",
         "Community",
-        "CircuitPython Org"
+        "CircuitPython Org",
+        "test"
     ],
     "github_user": "{%- if cookiecutter.target_bundle == 'Adafruit' -%} adafruit {%- elif cookiecutter.target_bundle == 'CircuitPython Org' -%} circuitpython {%- endif -%}",
     "author_name": null,
@@ -17,5 +18,8 @@
     "other_requirements": "",
     "pypi_release": "{%- if cookiecutter.target_bundle == 'Adafruit' or cookiecutter.target_bundle == 'CircuitPython Org' -%} yes {%- else -%} no {%- endif -%}",
     "sphinx_docs":  "{%- if cookiecutter.target_bundle == 'Adafruit' or cookiecutter.target_bundle == 'CircuitPython Org' -%} yes {%- else -%} no {%- endif -%}",
-    "_extensions": ["jinja2.ext.do"]
+    "_extensions": ["jinja2.ext.do"],
+    "__dirname": "{% if cookiecutter.target_bundle != 'CircuitPython Org' %}{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize }}_CircuitPython{% else %}CircuitPython{% endif %}_{{ cookiecutter.library_name|replace(' ', '_')}}{% else %}CircuitPython_Org_{{ cookiecutter.library_name|replace(' ', '_')}}{% endif %}",
+    "__libname": "{{ cookiecutter.library_name | lower | replace(' ', '_') }}",
+    "__libprefix": "{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | lower | replace(' ', '_') }}_{% endif %}"
 }

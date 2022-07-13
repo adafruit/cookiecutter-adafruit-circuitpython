@@ -5,8 +5,7 @@ Introduction
     :target: https://adafru.it/discord
     :alt: Discord
 
-This cookiecutter creates a project structure for a Adafruit CircuitPython
-library.
+This cookiecutter creates a project structure for an Adafruit CircuitPython library.
 
 See this Adafruit Learn Guide for an explanation of creating a CircuitPython library: `Creating and sharing a CircuitPython library <https://learn.adafruit.com/creating-and-sharing-a-circuitpython-library/overview>`_ The section for using cookiecutter is `here <https://learn.adafruit.com/creating-and-sharing-a-circuitpython-library/creating-a-library#cookie-cutter>`_.
 
@@ -20,7 +19,7 @@ Cookiecutter Usage
 .. code-block:: bash
 
   # The first time
-  pip install cookiecutter
+  pip install cookiecutter@https://github.com/cookiecutter/cookiecutter/archive/2.0.2.zip
 
   cookiecutter gh:adafruit/cookiecutter-adafruit-circuitpython
 
