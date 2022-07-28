@@ -19,7 +19,7 @@ Cookiecutter Usage
 .. code-block:: bash
 
   # The first time
-  pip install cookiecutter@https://github.com/cookiecutter/cookiecutter/archive/2.0.2.zip
+  pip install cookiecutter~=2.1
 
   cookiecutter gh:adafruit/cookiecutter-adafruit-circuitpython
 
