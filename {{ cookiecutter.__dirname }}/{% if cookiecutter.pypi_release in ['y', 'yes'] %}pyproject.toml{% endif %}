@@ -40,8 +40,7 @@ authors = [
 ]
 urls = {Homepage = "https://github.com/{{ cookiecutter.github_user }}/{{ repo_name }}"}
 keywords = [
-{% for kw_list_keyword in kw_list.default %}
-        "{{ kw_list_keyword }}",
+{% for kw_list_keyword in kw_list.default %}        "{{ kw_list_keyword }}",
 {% endfor -%}
 ]
 license = {text = "MIT"}
