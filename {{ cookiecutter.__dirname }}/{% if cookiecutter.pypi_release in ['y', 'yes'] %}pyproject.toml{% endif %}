@@ -33,7 +33,7 @@ requires = [
 [project]
 name = "{{ pypi_name }}"
 description = "{{ cookiecutter.library_description }}"
-version = "0.0.0-auto.0"
+version = "0.0.0+auto.0"
 readme = "README.rst"
 authors = [
     {name = "Adafruit Industries", email = "circuitpython@adafruit.com"}

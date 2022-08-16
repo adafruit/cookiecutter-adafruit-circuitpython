@@ -49,5 +49,5 @@ Implementation Notes
     {%- set repo_name = 'CircuitPython_Org_' + cookiecutter.library_name | replace(" ", "_") -%}
 {% endif -%}
 
-__version__ = "0.0.0-auto.0"
+__version__ = "0.0.0+auto.0"
 __repo__ = "https://github.com/{{ cookiecutter.github_user }}/{{ repo_name }}.git"

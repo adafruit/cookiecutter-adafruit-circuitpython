@@ -82,7 +82,7 @@ jobs:
         TWINE_PASSWORD: {% raw %}${{ secrets.pypi_password }}{% endraw %}
       run: |
         for file in $(find -not -path "./.*" -not -path "./docs*" \( -name "*.py" -o -name "*.toml" \) ); do
-            {% raw %}sed -i -e "s/0.0.0-auto.0/${{github.event.release.tag_name}}/" $file;{% endraw %}
+            {% raw %}sed -i -e "s/0.0.0+auto.0/${{github.event.release.tag_name}}/" $file;{% endraw %}
         done;
         python -m build
         twine upload dist/*
