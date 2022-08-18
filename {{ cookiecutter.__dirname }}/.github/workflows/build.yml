@@ -54,6 +54,17 @@ jobs:
         pre-commit run --all-files
     - name: Build assets
       run: circuitpython-build-bundles --filename_prefix {% raw %}${{ steps.repo-name.outputs.repo-name }}{% endraw -%} {% if cookiecutter.target_bundle == 'Community' %} --package_folder_prefix {% if cookiecutter.library_prefix -%} {{ cookiecutter.library_prefix | lower | replace(' ', '_') }}_ {%- else %}""{%- endif -%}{%- endif %} --library_location .
+    - name: Check Sizes
+      run: |
+        git clone https://github.com/FoamyGuy/CircuitPython_Memory_Tools.git
+        python CircuitPython_Memory_Tools/measure_size.py > sizes.txt
+    - name: Size Measurement Comment
+      if: github.event_name == 'pull_request'
+      uses: machine-learning-apps/pr-comment@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        path: sizes.txt
     - name: Archive bundles
       uses: actions/upload-artifact@v2
       with:
