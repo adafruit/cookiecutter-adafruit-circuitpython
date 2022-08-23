@@ -6,6 +6,7 @@
 
 import os
 import sys
+import datetime
 
 sys.path.insert(0, os.path.abspath(".."))
 
@@ -52,7 +53,8 @@ master_doc = "index"
 
 # General information about the project.
 project = "{% if cookiecutter.target_bundle != 'CircuitPython Org' %}{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize }} {% endif %}{% endif %}CircuitPython {{ cookiecutter.library_name }} Library"
-copyright = "{% now 'utc', '%Y' %} {{ cookiecutter.author_name }}"
+current_year = str(datetime.datetime.now().year)
+copyright = current_year + " {{ cookiecutter.author_name }}"
 author = "{{ cookiecutter.author_name }}"
 
 # The version info for the project you're documenting, acts as replacement for
