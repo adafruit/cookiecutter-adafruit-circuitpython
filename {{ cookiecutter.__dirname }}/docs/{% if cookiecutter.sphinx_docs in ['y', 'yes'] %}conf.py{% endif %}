@@ -53,8 +53,14 @@ master_doc = "index"
 
 # General information about the project.
 project = "{% if cookiecutter.target_bundle != 'CircuitPython Org' %}{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize }} {% endif %}{% endif %}CircuitPython {{ cookiecutter.library_name }} Library"
+creation_year = "{% now 'utc', '%Y' %}"
 current_year = str(datetime.datetime.now().year)
-copyright = current_year + " {{ cookiecutter.author_name }}"
+year_duration = (
+    current_year
+    if current_year == creation_year
+    else creation_year + " - " + current_year
+)
+copyright = year_duration + " {{ cookiecutter.author_name }}"
 author = "{{ cookiecutter.author_name }}"
 
 # The version info for the project you're documenting, acts as replacement for
