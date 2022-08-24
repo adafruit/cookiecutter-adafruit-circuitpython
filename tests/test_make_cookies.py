@@ -108,14 +108,9 @@ def test_new_cookiecutter_all_entries():
     overwrite_workaround()
 
     test_context = {}
-    for key, value in cookie_json.items():
+    for key in cookie_json:
         if not key.startswith('_'):
-            if key == "target_bundle":
-                test_context[key] = 'Community'
-            elif key == "pypi_release":
-                test_context[key] = 'yes'
-            else:
-                test_context[key] = 'test'
+            test_context[key] = "Community" if key == "target_bundle" else "test"
 
     new_cookie = cookiecutter(
         str(working_dir.resolve()),

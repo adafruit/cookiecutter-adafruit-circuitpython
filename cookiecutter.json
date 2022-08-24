@@ -16,7 +16,6 @@
     "requires_bus_device": "",
     "requires_register": "",
     "other_requirements": "",
-    "pypi_release": "{%- if cookiecutter.target_bundle == 'Adafruit' or cookiecutter.target_bundle == 'CircuitPython Org' -%} yes {%- else -%} no {%- endif -%}",
     "sphinx_docs":  "{%- if cookiecutter.target_bundle == 'Adafruit' or cookiecutter.target_bundle == 'CircuitPython Org' -%} yes {%- else -%} no {%- endif -%}",
     "_extensions": ["jinja2.ext.do"],
     "__dirname": "{% if cookiecutter.target_bundle != 'CircuitPython Org' %}{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefix | capitalize }}_CircuitPython{% else %}CircuitPython{% endif %}_{{ cookiecutter.library_name|replace(' ', '_')}}{% else %}CircuitPython_Org_{{ cookiecutter.library_name|replace(' ', '_')}}{% endif %}",
