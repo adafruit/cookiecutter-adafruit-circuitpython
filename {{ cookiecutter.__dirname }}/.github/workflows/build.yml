@@ -71,7 +71,7 @@ jobs:
       if: github.event_name == 'pull_request' && steps.check_sizes_file.outputs.files_exists == 'true'
       uses: machine-learning-apps/pr-comment@master
       env:
-        GITHUB_TOKEN: {% raw %}${{ secrets.GITHUB_TOKEN }} {% endraw %}
+        GITHUB_TOKEN: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
       with:
         path: sizes.txt
     - name: Archive bundles
