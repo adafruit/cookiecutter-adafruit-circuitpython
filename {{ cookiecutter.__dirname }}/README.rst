@@ -79,8 +79,6 @@ image from the assets folder in the PCB's GitHub repo.
 `Purchase one from the Adafruit shop <http://www.adafruit.com/products/{{cookiecutter.adafruit_product_id}}>`_
 {% endif -%}
 
-{%- if cookiecutter.pypi_release in  ["y", "yes"] %}
-
 Installing from PyPI
 =====================
 .. note:: This library is not available on PyPI yet. Install documentation is included
@@ -110,8 +108,6 @@ To install in a virtual environment in your current project:
     python3 -m venv .env
     source .env/bin/activate
     pip3 install {% if cookiecutter.library_prefix -%}{{ cookiecutter.library_prefix }}-{% endif -%}circuitpython-{{ pypi_name }}
-
-{% endif %}
 
 Installing to a Connected CircuitPython Device with Circup
 ==========================================================
