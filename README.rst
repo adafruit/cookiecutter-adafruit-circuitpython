@@ -63,7 +63,7 @@ the information requested, make sure the ``.. todo::`` text is removed. Like thi
 
     # After Cleanup
     This library talks to the AM4Z-1NG sensor. Typical use is for robot friends.
-    
+
 .. note::
 
     If you are not uploading the repository for Adafruit (i.e., the Community bundle), and you
