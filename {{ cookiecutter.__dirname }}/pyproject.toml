@@ -6,7 +6,8 @@
 {# put keywords into an iterable list, based on word wrapping #}
 {%- set kw_list = namespace(kw_list=[], default=["adafruit", "blinka", "circuitpython", "micropython"]) -%}
 {%- do kw_list.default.append(cookiecutter.library_name|lower|replace(" ", "-")) -%}
-{%- do kw_list.default.extend(cookiecutter.library_keywords.split(" ")) -%}
+{%- set user_kws = cookiecutter.library_keywords.split(" ") -%}
+{%- do kw_list.default.extend(user_kws|reject("==", "")) -%}
 {%- set wrapped = kw_list.default|unique|join(" ")|wordwrap(break_long_words=False) -%}
 {%- do kw_list.kw_list.extend(wrapped.split("\n")) -%}
 {# create repo and pypi names #}
