@@ -59,7 +59,16 @@ jobs:
       with:
         repository: 'circuitpython/CircuitPython_Org_size_tools'
         path: 'CircuitPython_Org_size_tools'
-    - name: Check Sizes
+    - name: Clone Main Branch
+      uses: actions/checkout@v3
+      with:
+        path: 'main_branch_repo'
+        ref: 'main'
+    - name: Build main
+      run: |
+        cd main_branch_repo
+        circuitpython-build-bundles --filename_prefix ${{ steps.repo-name.outputs.repo-name }} --library_location .
+    - name: Measure Sizes
       run: |
         python CircuitPython_Org_size_tools/size_tools.py
     - name: Check sizes.txt file existence
