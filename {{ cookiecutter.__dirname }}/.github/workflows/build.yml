@@ -67,7 +67,7 @@ jobs:
     - name: Build main
       run: |
         cd main_branch_repo
-        circuitpython-build-bundles --filename_prefix ${{ steps.repo-name.outputs.repo-name }} --library_location .
+        circuitpython-build-bundles --filename_prefix {% raw %}${{ steps.repo-name.outputs.repo-name }}{% endraw -%} --library_location .
     - name: Measure Sizes
       run: |
         python CircuitPython_Org_size_tools/size_tools.py
