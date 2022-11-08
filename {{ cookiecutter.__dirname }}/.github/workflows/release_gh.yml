@@ -15,4 +15,4 @@ jobs:
     - name: Run GitHub Release CI workflow
       uses: adafruit/workflows-circuitpython-libs/release-gh@main
       with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+        github-token: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
