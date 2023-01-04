@@ -4,7 +4,13 @@
 
 name: Build CI
 
-on: [pull_request, push]
+on:
+  # only run tests on push to main
+  push:
+    branches:
+      - main
+  # run tests for all pull requests
+  pull_request:
 
 jobs:
   test:
