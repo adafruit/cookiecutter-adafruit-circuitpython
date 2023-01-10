@@ -1,16 +1,18 @@
-# SPDX-FileCopyrightText: 2021 Adafruit Industries
+# SPDX-FileCopyrightText: 2022 Alec Delaney, written for Adafruit Industries
 #
 # SPDX-License-Identifier: MIT
 
-"""
-Hooks that run before the template is rendered.
-"""
+import cookiecutter
+from pkg_resources import packaging
 
-import sys
+MIN_VERSION_SEMVER = "2.1"
+MIN_VERSION = packaging.version.parse(MIN_VERSION_SEMVER)
 
-github_user = '{{cookiecutter.github_user}}'
+user_version_semver = cookiecutter.__version__
+user_version = packaging.version.parse(user_version_semver)
 
-if github_user in ["", None]:
-    print("ERROR: github_user is a required field.")
-    # exits with status 1 to indicate failure
-    sys.exit(1)
+if MIN_VERSION > user_version:
+    print("")
+    print("!!! cookiecutter must be at a minimum of version", MIN_VERSION, "!!!")
+    print("")
+    raise SystemExit(1)

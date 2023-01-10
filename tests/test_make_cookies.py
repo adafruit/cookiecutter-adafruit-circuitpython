@@ -11,10 +11,6 @@ import sys
 from cookiecutter.main import cookiecutter
 
 
-# only verified on linux and MacOS
-if not (sys.platform.startswith('linux') or sys.platform.startswith('darwin')):
-    raise RuntimeError('These tests are only verified to run on Linux and MacOS systems.')
-
 working_dir = pathlib.Path()
 output_dir = working_dir / '.cookie_test'
 
@@ -45,7 +41,7 @@ def compare_template_dirs(*, library_name='test', library_prefix=None):
                                          `library_prefix` prompt. Default: None
     """
 
-    cookie_template_path = working_dir / "{{ cookiecutter and 'tmp_repo' }}"
+    cookie_template_path = working_dir / "{{ cookiecutter.__dirname }}"
     if library_prefix:
         generated_folder_name = "{}_CircuitPython_{}".format(library_prefix, library_name)
     else:
@@ -87,10 +83,9 @@ def test_new_cookiecutter_only_required_entries():
 
     test_context = {}
     for key, value in cookie_json.items():
-        if value == None:
-            test_context[key] = 'test'
-        if key.startswith('_'):
-            test_context[key] = value
+        if not key.startswith('_'):
+            if value == None:
+                test_context[key] = 'test'
 
     new_cookie = cookiecutter(
         str(working_dir.resolve()),
@@ -113,16 +108,9 @@ def test_new_cookiecutter_all_entries():
     overwrite_workaround()
 
     test_context = {}
-    for key, value in cookie_json.items():
+    for key in cookie_json:
         if not key.startswith('_'):
-            if key == "target_bundle":
-                test_context[key] = 'community'
-            if key == "pypi_release":
-                test_context[key] = 'yes'
-            else:
-                test_context[key] = 'test'
-        else:
-            test_context[key] = value
+            test_context[key] = "Community" if key == "target_bundle" else "test"
 
     new_cookie = cookiecutter(
         str(working_dir.resolve()),

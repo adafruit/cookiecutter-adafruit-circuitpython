@@ -5,8 +5,7 @@ Introduction
     :target: https://adafru.it/discord
     :alt: Discord
 
-This cookiecutter creates a project structure for a Adafruit CircuitPython
-library.
+This cookiecutter creates a project structure for an Adafruit CircuitPython library.
 
 See this Adafruit Learn Guide for an explanation of creating a CircuitPython library: `Creating and sharing a CircuitPython library <https://learn.adafruit.com/creating-and-sharing-a-circuitpython-library/overview>`_ The section for using cookiecutter is `here <https://learn.adafruit.com/creating-and-sharing-a-circuitpython-library/creating-a-library#cookie-cutter>`_.
 
@@ -20,7 +19,7 @@ Cookiecutter Usage
 .. code-block:: bash
 
   # The first time
-  pip install cookiecutter
+  pip install cookiecutter~=2.1
 
   cookiecutter gh:adafruit/cookiecutter-adafruit-circuitpython
 
@@ -44,7 +43,6 @@ Prompts
   If the library uses Register, enter ``y`` or ``yes`` to include. If the library doesn't use Register, all other entries including empty, will not include Register.
 * ``other_requirements`` - Adds any other module dependencies for PyPi. Enter a comma separated string of modules
   (e.g. ``adafruit-circuitpython-pca9685, adafruit-circuitpython-motor``). NOTE: ``Adafruit-Blinka`` is always included, so no need to include it here.
-* ``pypi_release`` - Will this library be releaased on PyPI? If so, enter ``y`` or ``yes`` to include the setup.py. For Adafruit libraries this defaults to Yes.
 * ``sphinx_docs`` - Should the Sphinx based documentation be included in your repo? If so, enter ``y`` or ``yes`` to include the setup.py. For Adafruit libraries this defaults to Yes.
 
 
@@ -65,6 +63,14 @@ the information requested, make sure the ``.. todo::`` text is removed. Like thi
 
     # After Cleanup
     This library talks to the AM4Z-1NG sensor. Typical use is for robot friends.
+
+.. note::
+
+    If you are not uploading the repository for Adafruit (i.e., the Community bundle), and you
+    wish to use the Release feature on GitHub to upload libraries to PyPI, you will need to
+    add your PyPI token to the repository secrets.  Set a secret named ``PYPI_USERNAME`` to
+    ``__token__`` and a secret named ``PYPI_PASSWORD`` to your API token with the proper scope.
+    Never share your API token anyone!
 
 Windows Users
 ==============

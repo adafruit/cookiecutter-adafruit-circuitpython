@@ -1,0 +1,12 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: cookiecutter-adafruit-circuitpython
+Upstream-Contact: support@adafruit.com
+Source: https://github.com/adafruit/cookiecutter-adafruit-circuitpython/
+
+Files: {{ cookiecutter.__dirname }}/docs
+Copyright: 2017 Scott Shawcroft, written for Adafruit Industries
+License: MIT
+
+Files: {{ cookiecutter.__dirname }}/docs/_static
+Copyright: 2018 Phillip Torrone for Adafruit Industries
+License: MIT
