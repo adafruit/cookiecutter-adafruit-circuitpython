@@ -124,7 +124,7 @@ following command to install:
 
 .. code-block:: shell
 
-    circup install {{ cookiecutter.library_name | lower | replace(" ", "-") }}
+    circup install {{ cookiecutter.__libprefix }}{{ cookiecutter.__libname }}
 
 Or the following command to update an existing version:
 
