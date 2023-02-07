@@ -16,3 +16,4 @@ jobs:
       uses: adafruit/workflows-circuitpython-libs/release-gh@main
       with:
         github-token: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
+        upload-url: {% raw %}${{ github.event.release.upload_url }}{% endraw %}
