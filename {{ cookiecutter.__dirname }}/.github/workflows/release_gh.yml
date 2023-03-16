@@ -16,4 +16,9 @@ jobs:
       uses: adafruit/workflows-circuitpython-libs/release-gh@main
       with:
         github-token: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
-        upload-url: {% raw %}${{ github.event.release.upload_url }}{% endraw %}
+        upload-url: {% raw %}${{ github.event.release.upload_url }}{% endraw %}{% if cookiecutter.target_bundle != 'Adafruit' %}
+        # TODO: If you're creating a package (library is a folder), add this
+        # argument along with the prefix (or full name) of the package folder
+        # so the  MPY bundles are built correctly:s
+        # package-prefix: {{ cookiecutter.__libprefix }}{{ cookiecutter.__libname }}
+{%- endif %}
