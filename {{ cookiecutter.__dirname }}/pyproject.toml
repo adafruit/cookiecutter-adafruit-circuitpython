@@ -24,6 +24,18 @@
     {%- set repo_name = 'CircuitPython_Org_' + cookiecutter.library_name | replace(" ", "_") -%}
 {%- endif -%}
 {%- set pypi_name = repo_name|lower|replace("_", "-")|replace(" ", "-")|replace("circuitpython-org-", "circuitpython-") -%}
+{%- set lib_author_name = "" -%}
+{%- if cookiecutter.company -%}
+    {%- set lib_author_name = cookiecutter.company -%}
+{%- elif cookiecutter.author_name -%}
+    {%- set lib_author_name = cookiecutter.author_name -%}
+{%- endif -%}
+{%- set lib_author_email = "" -%}
+{%- if cookiecutter.target_bundle == "Adafruit" -%}
+    {%- set lib_author_email = "circuitpython@adafruit.com" -%}
+{%- elif cookiecutter.author_email -%}
+    {%- set lib_author_email = cookiecutter.author_email -%}
+{%- endif -%}
 [build-system]
 requires = [
     "setuptools",
@@ -37,7 +49,7 @@ description = "{{ cookiecutter.library_description }}"
 version = "0.0.0+auto.0"
 readme = "README.rst"
 authors = [
-    {name = "Adafruit Industries", email = "circuitpython@adafruit.com"}
+    {name = "{{ lib_author_name }}"{% if  lib_author_email != "" %}, email = "{{ lib_author_email }}"{% endif -%} }
 ]
 urls = {Homepage = "https://github.com/{{ cookiecutter.github_user }}/{{ repo_name }}"}
 keywords = [

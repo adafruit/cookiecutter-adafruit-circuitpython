@@ -7,6 +7,7 @@
     ],
     "github_user": "{%- if cookiecutter.target_bundle == 'Adafruit' -%} adafruit {%- elif cookiecutter.target_bundle == 'CircuitPython Org' -%} circuitpython {%- endif -%}",
     "author_name": null,
+    "author_email": "{%- if cookiecutter.target_bundle != 'Community' -%}circuitpython@adafruit.com{%- endif -%}",
     "company": "{%- if cookiecutter.target_bundle == 'Adafruit' -%} Adafruit Industries {%- elif cookiecutter.target_bundle == 'CircuitPython Org' -%} CircuitPython Organization{%- endif -%}",
     "library_name": null,
     "library_description": "",
