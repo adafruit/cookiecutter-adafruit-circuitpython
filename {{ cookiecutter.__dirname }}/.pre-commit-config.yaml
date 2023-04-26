@@ -7,6 +7,10 @@ repos:
     rev: 22.3.0
     hooks:
       - id: black
+  - repo: https://github.com/pycqa/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
   - repo: https://github.com/fsfe/reuse-tool
     rev: v0.14.0
     hooks:

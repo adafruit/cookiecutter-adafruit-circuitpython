@@ -75,3 +75,7 @@ py-modules = ["{% if cookiecutter.library_prefix %}{{ cookiecutter.library_prefi
 [tool.setuptools.dynamic]
 dependencies = {file = ["requirements.txt"]}
 optional-dependencies = {optional = {file = ["optional_requirements.txt"]}}
+
+[tool.isort]
+profile = "black"
+skip_gitignore = true
