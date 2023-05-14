@@ -71,12 +71,13 @@ This is easily achieved by downloading
 or individual libraries can be installed using
 `circup <https://github.com/adafruit/circup>`_.
 
-{%- if cookiecutter.target_bundle == 'Adafruit' %}
+{% if cookiecutter.target_bundle == 'Adafruit' %}
 
 .. todo:: Describe the Adafruit product this library works with. For PCBs, you can also add the
 image from the assets folder in the PCB's GitHub repo.
 
 `Purchase one from the Adafruit shop <http://www.adafruit.com/products/{{cookiecutter.adafruit_product_id}}>`_
+
 {% endif -%}
 
 Installing from PyPI
