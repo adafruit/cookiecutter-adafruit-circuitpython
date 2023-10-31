@@ -20,34 +20,51 @@ race, religion, or sexual identity and orientation.
 We are committed to providing a friendly, safe and welcoming environment for
 all.
 
-Examples of behavior that contributes to creating a positive environment
+Examples of behavior that contributes to creating and maintaining a positive environment
 include:
 
 * Be kind and courteous to others
 * Using welcoming and inclusive language
+* Respecting the identity of every community member, including asking for their
+  pronouns if uncertain
 * Being respectful of differing viewpoints and experiences
 * Collaborating with other community members
+* Providing desired assistance and knowledge to other community members
+* Being open to new information and ideas
 * Gracefully accepting constructive criticism
 * Focusing on what is best for the community
 * Showing empathy towards other community members
 
-Examples of unacceptable behavior by participants include:
+Examples of unacceptable behavior by community members include:
 
 * The use of sexualized language or imagery and sexual attention or advances
 * The use of inappropriate images, including in a community member's avatar
-* The use of inappropriate language, including in a community member's nickname
+* The use of inappropriate language or profanity, including in a community member's nickname
 * Any spamming, flaming, baiting or other attention-stealing behavior
 * Excessive or unwelcome helping; answering outside the scope of the question
   asked
 * Discussion or promotion of activities or projects that intend or pose a risk of
   significant harm
-* Trolling, insulting/derogatory comments, and personal or political attacks
+* Trolling, insulting/derogatory comments, and attacks of any nature (including,
+  but not limited to, personal or political attacks)
 * Promoting or spreading disinformation, lies, or conspiracy theories against
   a person, group, organisation, project, or community
 * Public or private harassment
 * Publishing others' private information, such as a physical or electronic
   address, without explicit permission
+* Engaging in behavior that creates an unwelcoming or uninclusive environment
 * Other conduct which could reasonably be considered inappropriate
+
+The CircuitPython Community welcomes everyone and strives to create a safe space for all. It is built
+around sharing and contributing to technology. We encourage discussing your thoughts, experiences,
+and feelings within the scope of the community. However, there are topics that can sometimes stray
+from that scope, and can lead to hurting others and create an unwelcoming, uninclusive environment.
+
+Examples of discussion topics that have been known to stray outside the scope of the CircuitPython
+Community include, but are not limited to:
+
+* Discussions regarding religion and related topics
+* Discussions regarding politics and related topics
 
 The goal of the standards and moderation guidelines outlined here is to build
 and maintain a respectful community. We ask that you don’t just aim to be
@@ -81,7 +98,7 @@ You may report in the following ways:
 
 In any situation, you may email the project maintainer.
 
-Email reports will be kept confidential.
+The source of email and direct message reports will be kept confidential.
 
 In situations on GitHub where the issue is particularly offensive, possibly
 illegal, requires immediate action, or violates the GitHub terms of service,
@@ -114,7 +131,7 @@ These are the steps for upholding our community’s standards of conduct.
 
 This Code of Conduct and the enforcement policies listed above apply to all
 CircuitPython Community venues. This includes but is not limited to any community
-spaces (both public and private), and CircuitPython repositories. Examples of
+spaces (both public and private), and CircuitPython GitHub repositories. Examples of
 CircuitPython Community spaces include but are not limited to meet-ups, issue
 threads on GitHub, text chats during a live stream, or interaction at a conference.
 
