@@ -43,7 +43,7 @@ Examples of unacceptable behavior by community members include:
 * Any spamming, flaming, baiting or other attention-stealing behavior
 * Excessive or unwelcome helping; answering outside the scope of the question
   asked
-* Discussion or promotion of activities or projects that intend or pose a risk of 
+* Discussion or promotion of activities or projects that intend or pose a risk of
   significant harm
 * Trolling, insulting/derogatory comments, and attacks of any nature (including,
   but not limited to, personal or political attacks)
