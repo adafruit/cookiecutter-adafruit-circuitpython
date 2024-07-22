@@ -3,13 +3,13 @@
 # SPDX-License-Identifier: MIT
 
 import cookiecutter
-from pkg_resources import packaging
+from packaging.version import parse
 
 MIN_VERSION_SEMVER = "2.1"
-MIN_VERSION = packaging.version.parse(MIN_VERSION_SEMVER)
+MIN_VERSION = parse(MIN_VERSION_SEMVER)
 
 user_version_semver = cookiecutter.__version__
-user_version = packaging.version.parse(user_version_semver)
+user_version = parse(user_version_semver)
 
 if MIN_VERSION > user_version:
     print("")
