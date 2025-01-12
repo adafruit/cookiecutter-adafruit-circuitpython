@@ -1,12 +1,10 @@
-# -*- coding: utf-8 -*-
-
 # SPDX-FileCopyrightText: 2017 Scott Shawcroft, written for Adafruit Industries
 #
 # SPDX-License-Identifier: MIT
 
+import datetime
 import os
 import sys
-import datetime
 
 sys.path.insert(0, os.path.abspath(".."))
 
@@ -34,10 +32,10 @@ autodoc_preserve_defaults = True
 
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
-    {%- if cookiecutter.requires_bus_device in ["y", "yes"] -%}
+    {% if cookiecutter.requires_bus_device in ["y", "yes"] -%}
     "BusDevice": ("https://docs.circuitpython.org/projects/busdevice/en/latest/", None),
-    {% endif %}
-    {%- if cookiecutter.requires_register in ["y", "yes"] -%}
+    {%- endif %}
+    {% if cookiecutter.requires_register in ["y", "yes"] -%}
     "Register": ("https://docs.circuitpython.org/projects/register/en/latest/", None),
     {%- endif %}
     "CircuitPython": ("https://docs.circuitpython.org/en/latest/", None),
@@ -59,9 +57,7 @@ project = "{% if cookiecutter.target_bundle != 'CircuitPython Org' %}{% if cooki
 creation_year = "{% now 'utc', '%Y' %}"
 current_year = str(datetime.datetime.now().year)
 year_duration = (
-    current_year
-    if current_year == creation_year
-    else creation_year + " - " + current_year
+    current_year if current_year == creation_year else creation_year + " - " + current_year
 )
 copyright = year_duration + " {{ cookiecutter.author_name }}"
 author = "{{ cookiecutter.author_name }}"
