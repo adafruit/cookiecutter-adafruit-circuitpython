@@ -5,7 +5,7 @@
 import json
 import os
 import pathlib
-import shutil
+import subprocess
 import sys
 
 from cookiecutter.main import cookiecutter
@@ -22,14 +22,14 @@ cookie_json = None
 with open(cookie_json_path.resolve(), 'r') as cookie_file:
     cookie_json = json.load(cookie_file)
 
-def overwrite_workaround():
-    """ cookiecutter's `overwrite_if_exists=True` is currently broken.
-        There is an accepted PR slated for release 1.8.0, but until
-        it is released, we'll need to work around it.
-    """
-    if output_dir.exists():
-        shutil.rmtree(str(output_dir.resolve()))
+def is_pre_commit_clean(cookie_dir):
+    """Check that the directory is pre-commit clean
 
+    side effect: creates a git repository in the cookie_dir"""
+    subprocess.check_call(["git", "init"], cwd=cookie_dir)
+    subprocess.check_call(["git", "add", "."], cwd=cookie_dir)
+    subprocess.check_call(["pre-commit", "run", "--all-files", "--show-diff-on-failure"], cwd=cookie_dir)
+    return True
 
 def compare_template_dirs(*, library_name='test', library_prefix=None):
     """ Helper function to compare the results of generated files,
@@ -78,9 +78,6 @@ def test_new_cookiecutter_only_required_entries():
         required fields (cookiecutter.json values of 'null').
     """
 
-    # delete testing output directory if exists
-    overwrite_workaround()
-
     test_context = {}
     for key, value in cookie_json.items():
         if not key.startswith('_'):
@@ -95,17 +92,15 @@ def test_new_cookiecutter_only_required_entries():
         extra_context=test_context
     )
 
-    assert os.listdir(output_dir)[0] == 'Adafruit_CircuitPython_test'
+    assert new_cookie.rpartition(os.sep)[2] == 'Adafruit_CircuitPython_test'
     assert compare_template_dirs(library_prefix="Adafruit")
+    assert is_pre_commit_clean(new_cookie)
 
 def test_new_cookiecutter_all_entries():
     """ Basic test of running cookiecutter, supplying info for all fields.
         All fields will have 'test' except where specific values are required, so this is only a
         minimal & cursory test.
     """
-
-    # delete testing output directory if exists
-    overwrite_workaround()
 
     test_context = {}
     for key in cookie_json:
@@ -120,5 +115,6 @@ def test_new_cookiecutter_all_entries():
         extra_context=test_context
     )
 
-    assert os.listdir(output_dir)[0] == 'Test_CircuitPython_test'
+    assert new_cookie.rpartition(os.sep)[2] == 'Test_CircuitPython_test'
     assert compare_template_dirs(library_prefix='Test')
+    assert is_pre_commit_clean(new_cookie)
