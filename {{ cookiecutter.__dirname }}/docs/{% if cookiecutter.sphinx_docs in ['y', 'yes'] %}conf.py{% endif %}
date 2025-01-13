@@ -29,18 +29,35 @@ extensions = [
 
 autodoc_preserve_defaults = True
 
-
+{% if cookiecutter.requires_bus_device in ["y", "yes"] and cookiecutter.requires_register in ["y", "yes"] -%}
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
-    {% if cookiecutter.requires_bus_device in ["y", "yes"] -%}
     "BusDevice": ("https://docs.circuitpython.org/projects/busdevice/en/latest/", None),
-    {%- endif %}
-    {% if cookiecutter.requires_register in ["y", "yes"] -%}
     "Register": ("https://docs.circuitpython.org/projects/register/en/latest/", None),
-    {%- endif %}
     "CircuitPython": ("https://docs.circuitpython.org/en/latest/", None),
 }
 
+{% elif cookiecutter.requires_bus_device in ["y", "yes"] -%}
+intersphinx_mapping = {
+    "python": ("https://docs.python.org/3", None),
+    "BusDevice": ("https://docs.circuitpython.org/projects/busdevice/en/latest/", None),
+    "CircuitPython": ("https://docs.circuitpython.org/en/latest/", None),
+}
+
+{% elif cookiecutter.requires_register in ["y", "yes"] -%}
+intersphinx_mapping = {
+    "python": ("https://docs.python.org/3", None),
+    "Register": ("https://docs.circuitpython.org/projects/register/en/latest/", None),
+    "CircuitPython": ("https://docs.circuitpython.org/en/latest/", None),
+}
+
+{% else -%}
+intersphinx_mapping = {
+    "python": ("https://docs.python.org/3", None),
+    "CircuitPython": ("https://docs.circuitpython.org/en/latest/", None),
+}
+
+{% endif -%}
 # Show the docstring from both the class and its __init__() method.
 autoclass_content = "both"
 
