@@ -6,6 +6,7 @@ target-version = "py38"
 line-length = 100
 
 [lint]
+preview = true
 select = ["I", "PL", "UP"]
 
 extend-select = [
