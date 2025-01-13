@@ -3,5 +3,6 @@
 # SPDX-License-Identifier: Unlicense
 
 cookiecutter >= 2.1.0
+pre-commit
 pytest
 setuptools
