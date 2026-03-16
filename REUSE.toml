@@ -1,0 +1,21 @@
+# SPDX-FileCopyrightText: 2026 Alec Delaney
+#
+# SPDX-License-Identifier: MIT
+
+version = 1
+
+SPDX-PackageName = "cookiecutter-adafruit-circuitpython"
+SPDX-PackageSupplier = "support@adafruit.com"
+SPDX-PackageDownloadLocation = "https://github.com/adafruit/cookiecutter-adafruit-circuitpython/"
+
+[[annotations]]
+path = ["{{ cookiecutter.__dirname }}/docs/*"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2017 Scott Shawcroft, written for Adafruit Industries"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = ["{{ cookiecutter.__dirname }}/docs/_static/*"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2018 Phillip Torrone for Adafruit Industries"
+SPDX-License-Identifier = "MIT"
